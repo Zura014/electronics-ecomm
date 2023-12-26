@@ -1,0 +1,7 @@
+.hamburger:hover .icon-hamburger {
+  fill: #129cb8;
+  transition: all 0.3s;
+}
+.icons-div:hover .svg-icon {
+  fill: #129cb8;
+}
