@@ -9,6 +9,8 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/pages/authorization/login/login.component';
 import { SignupComponent } from './components/pages/authorization/signup/signup.component';
 import { FormsModule } from '@angular/forms';
+import { NgOptimizedImage } from '@angular/common';
+import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgOptimizedImage
   ],
   providers: [
     provideClientHydration()
