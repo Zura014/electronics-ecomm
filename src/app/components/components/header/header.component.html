@@ -1,4 +1,216 @@
-<header class="flex flex-col">
+<!-- Burger Menu -->
+
+<div class="flex absolute duration-300 bg-[rgba(0,0,0,0.4)] top-0 left-0 w-full h-full z-50"
+    [ngClass]="{'-left-full opacity-0': !isClickedBM}">
+
+    <div class="w-1/3 overflow-hidden h-full absolute bg-white duration-300">
+        <div class="flex items-center justify-end p-4">
+            <button class="flex justify-center items-center" (click)="toggleBM()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="flex h-[30px] w-[30px]"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 40"
+                    style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                    <g>
+                        <path
+                            d="M17.4,16l9.3-9.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0L16,14.6L6.7,5.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l9.3,9.3l-9.3,9.3   c-0.4,0.4-0.4,1,0,1.4C5.5,26.9,5.7,27,6,27s0.5-0.1,0.7-0.3l9.3-9.3l9.3,9.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3   c0.4-0.4,0.4-1,0-1.4L17.4,16z" />
+                    </g>
+                </svg>
+            </button>
+        </div>
+        <div class="absolute duration-300 bg-white right-0 bg- w-full z-50 h-full" [ngClass]="{'-right-full': !bmeh}">
+            <div class="relative flex flex-col px-8 text-sm font-medium gap-y-6 justify-between items-start">
+
+                <div class="flex gap-x-2 items-center">
+                    <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" (click)="toggleBmeh()" focusable="false"
+                        role="presentation" class="cursor-pointer icon icon-arrow rotate-180 w-[13px] h-[12px]"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                            fill="currentColor">
+                        </path>
+                    </svg>
+                    <a href="">
+                        Headphone
+                    </a>
+                </div>
+                <a href="">Speaker</a>
+                <a href="">Laptop</a>
+                <a href="">Headphone</a>
+                <a href="">Tablet</a>
+            </div>
+        </div>
+
+        <div class="absolute duration-300 bg-white right-0 bg- w-full z-50 h-full" [ngClass]="{'-right-full': !bmec}">
+            <div class="relative flex flex-col px-8 text-sm font-medium gap-y-6 justify-between items-start">
+                <div class="flex gap-x-2 items-center">
+                    <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" (click)="toggleBmec()" focusable="false"
+                        role="presentation" class="cursor-pointer icon icon-arrow rotate-180 w-[13px] h-[12px]"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                            fill="currentColor">
+                        </path>
+                    </svg>
+                    <a href="">
+                        Computer & Laptop
+                    </a>
+                </div>
+                <a href="">Camera</a>
+                <a href="">Android Tv</a>
+                <a href="">Mobile</a>
+                <a href="">Watch</a>
+            </div>
+        </div>
+
+        <div class="absolute duration-300 bg-white right-0 bg- w-full z-50 h-full" [ngClass]="{'-right-full': !bmem}">
+            <div class="relative flex flex-col px-8 text-sm font-medium gap-y-6 justify-between items-start">
+                <div class="flex gap-x-2 items-center">
+                    <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" (click)="toggleBmem()" focusable="false"
+                        role="presentation" class="cursor-pointer icon icon-arrow rotate-180 w-[13px] h-[12px]"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                            fill="currentColor">
+                        </path>
+                    </svg>
+                    <a href="">
+                        Mobile & Tablet
+                    </a>
+                </div>
+                <a href="">Home Theater</a>
+                <a href="">Cell Phones</a>
+                <a href="">Smart TV</a>
+                <a href="">Air Purifier</a>
+            </div>
+        </div>
+
+
+        <div class="absolute duration-300 bg-white right-0 bg- w-full z-40 h-full" [ngClass]="{'-right-full': !bme}">
+
+            <div class="relative flex flex-col px-8 text-sm font-medium gap-y-6 justify-between items-start">
+                <div class="flex gap-x-2 items-center">
+                    <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" (click)="toggleBme()" focusable="false"
+                        role="presentation" class="cursor-pointer icon icon-arrow rotate-180 w-[13px] h-[12px]"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                            fill="currentColor">
+                        </path>
+                    </svg>
+                    <a href="">
+                        Electronics
+                    </a>
+
+                </div>
+                <div class="w-full relative">
+                    <a href="#" class="w-full relative">Headphone</a>
+                    <svg (click)="toggleBmeh()" viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
+                        role="presentation"
+                        class="cursor-pointer absolute top-1 right-0 w-[13px] h-[12px] icon icon-arrow"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                            fill="currentColor">
+                        </path>
+                    </svg>
+                </div>
+                <div class="w-full relative">
+                    <a href="">
+                        Computer & Laptop
+                    </a>
+                    <svg (click)="toggleBmec()" viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
+                        role="presentation"
+                        class="cursor-pointer absolute top-1 right-0 w-[13px] h-[12px] icon icon-arrow"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                            fill="currentColor">
+                        </path>
+                    </svg>
+
+                </div>
+                <div class="w-full relative">
+                    <a href="">
+                        Mobile & Tablet
+                    </a>
+                    <svg (click)="toggleBmem()" viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
+                        role="presentation"
+                        class="cursor-pointer absolute top-1 right-0 w-[13px] h-[12px] icon icon-arrow"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                            fill="currentColor">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+        <div class="relative flex flex-col px-8 text-sm font-medium gap-y-6 justify-between items-start">
+            <a href="#">Home</a>
+            <div class="w-full relative">
+                <a href="#" class="w-full relative">Electronics</a>
+                <svg (click)="toggleBme()" viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
+                    role="presentation" class="cursor-pointer absolute top-1 right-0 w-[13px] h-[12px] icon icon-arrow"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
+                        fill="currentColor">
+                    </path>
+                </svg>
+            </div>
+            <a href="#">Today's Deal</a>
+            <a href="#">Summer Sale</a>
+            <a href="#">Smart Mobiles</a>
+            <a href="#">Mobile Accessories</a>
+            <a href="#">Blog</a>
+            <p>Tell a friends about Electshop Electronics & get 30% off your next order.</p>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<header class="flex flex-col relative">
+
+    <!-- Search Box -->
+
+    <div class="px-2.5 absolute top-0 left-0 w-full bg-white h-full z-50 duration-300"
+        [ngClass]="{'-top-full opacity-0': !isClickedSearch}">
+        <div class="flex justify-around items-center h-full w-full">
+            <div class="w-[95%] flex relative items-center">
+                <input style="letter-spacing: 0.4px;" type="text" placeholder="Search Product Here..."
+                    class="placeholder:text-sm w-full border h-10 py-2.5 pl-5 pr-[50px] outline-none rounded-md">
+                <button class="absolute flex items-center justify-center h-full top-0 right-0">
+                    <svg _ngcontent-ng-c1425525495="" id="Layer_1" data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.04 981.7"
+                        class="hover:fill-[#129cb8] duration-500 hover:duration-500 w-[25px] mx-[15px] h-[18px] icon icon-header-search">
+                        <g _ngcontent-ng-c1425525495="" id="_3_3" data-name="3_3">
+                            <path _ngcontent-ng-c1425525495=""
+                                d="M979.3,928.4,718.5,667.2a399.9,399.9,0,0,0,92.8-256.7C811.3,188.9,631.9,9.2,410.7,9.2S10,188.9,10,410.5,189.4,811.8,410.7,811.8A398.56,398.56,0,0,0,667,718.9L927.8,980.2a36.52,36.52,0,1,0,51.5-51.8ZM410.7,738.7C230,738.7,83,591.4,83,410.5S230,82.3,410.7,82.3,738.4,229.5,738.4,410.5,591.3,738.7,410.7,738.7Z"
+                                transform="translate(-10 -9.2)"></path>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div class="w-[5%] flex justify-center items-center pt-2">
+                <button class="flex justify-center items-center" (click)="toggleSearch()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="flex h-[30px] w-[30px]"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 40"
+                        style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                        <g>
+                            <path
+                                d="M17.4,16l9.3-9.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0L16,14.6L6.7,5.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l9.3,9.3l-9.3,9.3   c-0.4,0.4-0.4,1,0,1.4C5.5,26.9,5.7,27,6,27s0.5-0.1,0.7-0.3l9.3-9.3l9.3,9.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3   c0.4-0.4,0.4-1,0-1.4L17.4,16z" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- Upper section -->
     <div class="flex items-center justify-around bg-[#129cb8] px-4 text-white pt-[9px] text-sm font-[400] pb-2.5">
         <div class="flex items-center  justify-center lg:justify-between max-w-screen-xl w-full">
@@ -28,13 +240,16 @@
 
     </div>
     <!-- Mid section -->
-    <div>
+    <div class="relative">
+
         <div class="py-5 lg:py-[33px] px-[15px] mx-auto max-w-screen-md lg:max-w-screen-xl relative">
+
+
             <div class="flex w-full items-center justify-between h-full">
                 <div class="flex gap-x-3 sm:gap-x-4 lg:gap-0 w-3/4 xs:w-1/2 lg:w-1/4 items-center">
 
-                    <div class="lg:hidden flex hamburger duration-500">
-                        <a href="#">
+                    <div class="lg:hidden flex hamburger duration-500" (click)="toggleBM()">
+                        <a class="flex cursor-pointer">
                             <svg version="1.1" class="w-5 h-5 icon duration-500 icon-hamburger"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000">
@@ -76,10 +291,13 @@
                         </span>
                     </button>
                 </div>
+
+                <!-- Search Icon -->
+
                 <div class="w-1/4 xs:w-1/2 lg:w-1/4 h-[34px] sm:h-[40px] lg:h-[44px]">
                     <div class="flex h-full items-center justify-end">
-                        <div class="lg:hidden flex items-center">
-                            <a href="#" class="flex items-center icons-div w-full h-full">
+                        <div class="lg:hidden flex items-center" (click)="toggleSearch()">
+                            <a class="flex cursor-pointer items-center icons-div w-full h-full">
                                 <svg id="Layer_1"
                                     class="hover:fill-[#129cb8] duration-500 hover:duration-500 w-5 mx-[15px]  h-5 icon icon-header-search"
                                     data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.04 981.7">
@@ -150,7 +368,7 @@
                                 -3565 1853 -1946 1025 -5193 2734 -7214 3798 -2021 1064 -4304 2265 -5072
                                 2670 -769 405 -1398 739 -1398 742 0 10 17223 9071 17236 9068 6 -2 3883
                                 -2041 8617 -4532z"></path>
-                                                        <path d="M860 20483 c-402 -63 -727 -342 -840 -722 -18 -60 -20 -97 -20 -299
+                                        <path d="M860 20483 c-402 -63 -727 -342 -840 -722 -18 -60 -20 -97 -20 -299
                                 0 -262 6 -294 86 -457 81 -167 227 -326 380 -417 99 -58 19433 -10234 19569
                                 -10299 163 -78 238 -94 445 -94 209 0 282 16 455 99 239 115 19505 10261
                                 19581 10312 91 60 219 189 277 277 55 83 112 209 139 307 20 76 23 106 22 275
@@ -159,7 +377,7 @@
                                 -2115 -6615 -3483 -2599 -1368 -6011 -3164 -7582 -3992 l-2858 -1504 -1622
                                 854 c-893 470 -3407 1794 -5588 2942 -6098 3210 -7814 4114 -9910 5217 -2004
                                 1055 -2015 1061 -2181 1088 -61 9 -265 12 -319 3z"></path>
-                                                        <path d="M880 14344 c-70 -9 -206 -47 -279 -78 -271 -114 -487 -353 -575 -634
+                                        <path d="M880 14344 c-70 -9 -206 -47 -279 -78 -271 -114 -487 -353 -575 -634
                                 -25 -79 -26 -94 -26 -312 0 -219 1 -233 26 -312 70 -222 215 -415 405 -540
                                 105 -69 19565 -10311 19674 -10355 230 -92 520 -92 750 0 101 41 19542 10271
                                 19650 10341 150 97 298 269 370 431 59 133 77 219 83 384 5 170 -4 247 -46
