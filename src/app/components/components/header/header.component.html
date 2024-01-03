@@ -172,41 +172,40 @@
 
 
 
-    <!-- Search Box -->
+<!-- Search Box -->
 
-    <div class="px-2.5 absolute top-0 left-0 w-full bg-white h-[15vh] z-40 duration-300"
-        [ngClass]="{'-top-[15vh] opacity-0 -z-50': !isClickedSearch}"
-    >
-        <div class="flex justify-around items-center h-full w-full">
-            <div class="w-[95%] flex relative items-center">
-                <input style="letter-spacing: 0.4px;" type="text" placeholder="Search Product Here..."
-                    class="placeholder:text-sm w-full border h-10 py-2.5 pl-5 pr-[50px] outline-none rounded-md">
-                <button class="absolute flex items-center justify-center h-full top-0 right-0">
-                    <svg _ngcontent-ng-c1425525495="" id="Layer_1" data-name="Layer 1"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.04 981.7"
-                        class="hover:fill-[#129cb8] duration-500 hover:duration-500 w-[25px] mx-[15px] h-[18px] icon icon-header-search">
-                        <g _ngcontent-ng-c1425525495="" id="_3_3" data-name="3_3">
-                            <path _ngcontent-ng-c1425525495=""
-                                d="M979.3,928.4,718.5,667.2a399.9,399.9,0,0,0,92.8-256.7C811.3,188.9,631.9,9.2,410.7,9.2S10,188.9,10,410.5,189.4,811.8,410.7,811.8A398.56,398.56,0,0,0,667,718.9L927.8,980.2a36.52,36.52,0,1,0,51.5-51.8ZM410.7,738.7C230,738.7,83,591.4,83,410.5S230,82.3,410.7,82.3,738.4,229.5,738.4,410.5,591.3,738.7,410.7,738.7Z"
-                                transform="translate(-10 -9.2)"></path>
-                        </g>
-                    </svg>
-                </button>
-            </div>
-            <div class="w-[5%] flex justify-center items-center pt-2">
-                <button class="flex justify-center items-center" (click)="toggleSearch()">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="flex h-[30px] w-[30px]"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 40"
-                        style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                        <g>
-                            <path
-                                d="M17.4,16l9.3-9.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0L16,14.6L6.7,5.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l9.3,9.3l-9.3,9.3   c-0.4,0.4-0.4,1,0,1.4C5.5,26.9,5.7,27,6,27s0.5-0.1,0.7-0.3l9.3-9.3l9.3,9.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3   c0.4-0.4,0.4-1,0-1.4L17.4,16z" />
-                        </g>
-                    </svg>
-                </button>
-            </div>
+<div class="px-2.5 absolute top-0 left-0 w-full bg-white h-[15vh] z-40 duration-300"
+    [ngClass]="{'-top-[15vh] opacity-0 -z-50': !isClickedSearch}">
+    <div class="flex justify-around items-center h-full w-full">
+        <div class="w-[95%] flex relative items-center">
+            <input style="letter-spacing: 0.4px;" type="text" placeholder="Search Product Here..."
+                class="placeholder:text-sm w-full border h-10 py-2.5 pl-5 pr-[50px] outline-none rounded-md">
+            <button class="absolute flex items-center justify-center h-full top-0 right-0">
+                <svg _ngcontent-ng-c1425525495="" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 980.04 981.7"
+                    class="hover:fill-[#129cb8] duration-500 hover:duration-500 w-[25px] mx-[15px] h-[18px] icon icon-header-search">
+                    <g _ngcontent-ng-c1425525495="" id="_3_3" data-name="3_3">
+                        <path _ngcontent-ng-c1425525495=""
+                            d="M979.3,928.4,718.5,667.2a399.9,399.9,0,0,0,92.8-256.7C811.3,188.9,631.9,9.2,410.7,9.2S10,188.9,10,410.5,189.4,811.8,410.7,811.8A398.56,398.56,0,0,0,667,718.9L927.8,980.2a36.52,36.52,0,1,0,51.5-51.8ZM410.7,738.7C230,738.7,83,591.4,83,410.5S230,82.3,410.7,82.3,738.4,229.5,738.4,410.5,591.3,738.7,410.7,738.7Z"
+                            transform="translate(-10 -9.2)"></path>
+                    </g>
+                </svg>
+            </button>
+        </div>
+        <div class="w-[5%] flex justify-center items-center pt-2">
+            <button class="flex justify-center items-center" (click)="toggleSearch()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="flex h-[30px] w-[30px]"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 40"
+                    style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                    <g>
+                        <path
+                            d="M17.4,16l9.3-9.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0L16,14.6L6.7,5.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l9.3,9.3l-9.3,9.3   c-0.4,0.4-0.4,1,0,1.4C5.5,26.9,5.7,27,6,27s0.5-0.1,0.7-0.3l9.3-9.3l9.3,9.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3   c0.4-0.4,0.4-1,0-1.4L17.4,16z" />
+                    </g>
+                </svg>
+            </button>
         </div>
     </div>
+</div>
 
 
 
@@ -482,8 +481,42 @@
                 <li class="li-active-hover relative mr-[35px] py-4">
                     <a href="#" class="active-page">Home</a>
                 </li>
-                <li class="li-hover relative mr-[35px] py-4">
-                    <a href="#">Electronics</a>
+                <li class="relative mr-[35px] py-4">
+                    <a href="#" class="li-hover">Electronics</a>
+                    <!-- Dropdown -->
+                    <ul class="dropdown-menu opacity-100 w-[610px] -top-full rounded-md drop-shadow-sm border font-normal h-[210px] py-[15px] px-[30px] bg-white flex absolute -z-40 justify-around items-center">
+                        <!-- Box 1 -->
+                        <li class="w-1/4 mr-[15px]">
+                            <ul>
+                                <li><a href="" class="drp-link-title">Headphone</a></li>
+                                <li><a href="" class="drp-link">Speaker</a></li>
+                                <li><a href="" class="drp-link">Laptop</a></li>
+                                <li><a href="" class="drp-link">Headphone</a></li>
+                                <li><a href="" class="drp-link">Tablet</a></li>
+                            </ul>
+                        </li>
+                        <!-- Box 2 -->
+                        <li class="w-1/4 mr-[15px]">
+                            <ul>
+                                <li><a href="" class="drp-link-title">Computer & Laptop</a></li>
+                                <li><a href="" class="drp-link">Camera</a></li>
+                                <li><a href="" class="drp-link">Android Tv</a></li>
+                                <li><a href="" class="drp-link">Mobile</a></li>
+                                <li><a href="" class="drp-link">Watch</a></li>
+                            </ul>
+                        </li>
+                        <!-- Box 3 -->
+                        <li class="w-1/4 mr-[15px]">
+                            <ul>
+                                <li><a href="" class="drp-link-title">Mobile & Tablet</a></li>
+                                <li><a href="" class="drp-link">Home Theater</a></li>
+                                <li><a href="" class="drp-link">Cell Phones</a></li>
+                                <li><a href="" class="drp-link">Smart TV</a></li>
+                                <li><a href="" class="drp-link">Air Purifier</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
                 </li>
                 <li class="li-hover relative mr-[35px] py-4">
                     <a href="#">Today's Deal</a>

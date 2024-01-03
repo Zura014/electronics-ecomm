@@ -42,3 +42,23 @@
   left: 0;
   background-color: #129cb8;
 }
+
+.li-hover:hover .dropdown-menu {
+  opacity: 1 ;
+  top: 100%;
+  z-index: 50;
+}
+
+.drp-link-title{
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.drp-link-title::after{
+  
+}
+
+.drp-links {
+
+}
