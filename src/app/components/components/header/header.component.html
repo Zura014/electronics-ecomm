@@ -1,7 +1,7 @@
 <!-- Burger Menu -->
 
-<div class="absolute duration-300 bg-[rgba(0,0,0,0.4)] top-0 left-0 w-full h-full z-50"
-    [ngClass]="{'-left-full opacity-0 -z-20': !isClickedBM}">
+<div class="absolute duration-300 bg-[rgba(0,0,0,0.4)] top-0 left-0 w-full h-full z-40"
+    [ngClass]="{'-left-[100%] opacity-0 -z-50': !isClickedBM}">
 
     <div class="w-1/3 overflow-hidden h-full absolute bg-white duration-300">
         <div class="flex items-center justify-end p-4">
@@ -172,12 +172,11 @@
 
 
 
-<header class="flex flex-col relative">
-
     <!-- Search Box -->
 
-    <div class="px-2.5 absolute top-0 left-0 w-full bg-white h-full z-50 duration-300"
-        [ngClass]="{'-top-full opacity-0 -z-20': !isClickedSearch}">
+    <div class="px-2.5 absolute top-0 left-0 w-full bg-white h-[15vh] z-40 duration-300"
+        [ngClass]="{'-top-[15vh] opacity-0 -z-50': !isClickedSearch}"
+    >
         <div class="flex justify-around items-center h-full w-full">
             <div class="w-[95%] flex relative items-center">
                 <input style="letter-spacing: 0.4px;" type="text" placeholder="Search Product Here..."
@@ -211,6 +210,8 @@
 
 
 
+
+<header class="flex flex-col relative">
     <!-- Upper section -->
     <div class="flex items-center justify-around bg-[#129cb8] px-4 text-white pt-[9px] text-sm font-[400] pb-2.5">
         <div class="flex items-center  justify-center lg:justify-between max-w-screen-xl w-full">
@@ -240,7 +241,7 @@
 
     </div>
     <!-- Mid section -->
-    <div class="relative">
+    <div class="relative bg-white">
 
         <div class="py-5 lg:py-[33px] px-[15px] mx-auto max-w-screen-md lg:max-w-screen-xl relative">
 

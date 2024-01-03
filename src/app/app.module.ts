@@ -11,6 +11,7 @@ import { SignupComponent } from './components/pages/authorization/signup/signup.
 import { FormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
+import { SlidesComponent } from './components/components/slides/slides.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PageNotFoundComponent } from './components/pages/page-not-found/page-no
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SlidesComponent
   ],
   imports: [
     BrowserModule,
