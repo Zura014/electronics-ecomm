@@ -1,9 +1,9 @@
 <!-- Burger Menu -->
 
-<div class="absolute duration-300 bg-[rgba(0,0,0,0.4)] top-0 left-0 w-full h-full z-40"
-    [ngClass]="{'-left-[100%] opacity-0 -z-50': !isClickedBM}">
+<div class="block lg:hidden absolute duration-300 bg-[rgba(0,0,0,0.4)] top-0 left-0 w-full h-full z-40"
+    [ngClass]="{'left-[-100%] opacity-0 -z-50': !isClickedBM}">
 
-    <div class="w-1/3 overflow-hidden h-full absolute bg-white duration-300">
+    <div class="w-3/4 sm:w-1/2 md:w-1/3 overflow-hidden h-full absolute bg-white duration-300">
         <div class="flex items-center justify-end p-4">
             <button class="flex justify-center items-center" (click)="toggleBM()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="flex h-[30px] w-[30px]"
@@ -174,10 +174,10 @@
 
 <!-- Search Box -->
 
-<div class="px-2.5 absolute top-0 left-0 w-full bg-white h-[15vh] z-40 duration-300"
-    [ngClass]="{'-top-[15vh] opacity-0 -z-50': !isClickedSearch}">
+<div class="block lg:hidden px-2.5 absolute top-0 left-0 w-full bg-white h-[15vh] z-40 duration-300"
+    [ngClass]="{'top-[-15vh] opacity-0 -z-50': !isClickedSearch}">
     <div class="flex justify-around items-center h-full w-full">
-        <div class="w-[95%] flex relative items-center">
+        <div class="w-[90%] sm:w-[95%] flex relative items-center">
             <input style="letter-spacing: 0.4px;" type="text" placeholder="Search Product Here..."
                 class="placeholder:text-sm w-full border h-10 py-2.5 pl-5 pr-[50px] outline-none rounded-md">
             <button class="absolute flex items-center justify-center h-full top-0 right-0">
@@ -192,7 +192,7 @@
                 </svg>
             </button>
         </div>
-        <div class="w-[5%] flex justify-center items-center pt-2">
+        <div class="w-[10%] sm:w-[5%] flex justify-center items-center pt-2">
             <button class="flex justify-center items-center" (click)="toggleSearch()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="flex h-[30px] w-[30px]"
                     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 40"
@@ -481,14 +481,18 @@
                 <li class="li-active-hover relative mr-[35px] py-4">
                     <a href="#" class="active-page">Home</a>
                 </li>
-                <li class="relative mr-[35px] py-4">
+                <li class="relative drp-hover mr-[35px] py-4">
                     <a href="#" class="li-hover">Electronics</a>
                     <!-- Dropdown -->
-                    <ul class="dropdown-menu opacity-100 w-[610px] -top-full rounded-md drop-shadow-sm border font-normal h-[210px] py-[15px] px-[30px] bg-white flex absolute -z-40 justify-around items-center">
+                    <ul class="dropdown-menu">
                         <!-- Box 1 -->
-                        <li class="w-1/4 mr-[15px]">
-                            <ul>
-                                <li><a href="" class="drp-link-title">Headphone</a></li>
+                        <li class="w-1/3 mr-[15px]">
+                            <summary class="drp-link-title">
+                            <a href="" class="mb-2.5 h-[34px]">
+                                Headphone
+                            </a>
+                            </summary>
+                            <ul class="flex flex-col gap-y-3.5">
                                 <li><a href="" class="drp-link">Speaker</a></li>
                                 <li><a href="" class="drp-link">Laptop</a></li>
                                 <li><a href="" class="drp-link">Headphone</a></li>
@@ -496,9 +500,13 @@
                             </ul>
                         </li>
                         <!-- Box 2 -->
-                        <li class="w-1/4 mr-[15px]">
-                            <ul>
-                                <li><a href="" class="drp-link-title">Computer & Laptop</a></li>
+                        <li class="w-1/3 mr-[15px]">
+                            <summary class="drp-link-title">
+                            <a href="" class="mb-2.5 h-[34px]">
+                                Computer & Laptop
+                            </a>
+                            </summary>
+                            <ul class="flex flex-col gap-y-3.5">
                                 <li><a href="" class="drp-link">Camera</a></li>
                                 <li><a href="" class="drp-link">Android Tv</a></li>
                                 <li><a href="" class="drp-link">Mobile</a></li>
@@ -506,9 +514,13 @@
                             </ul>
                         </li>
                         <!-- Box 3 -->
-                        <li class="w-1/4 mr-[15px]">
-                            <ul>
-                                <li><a href="" class="drp-link-title">Mobile & Tablet</a></li>
+                        <li class="w-1/3 mr-[15px]">
+                            <summary class="drp-link-title">
+                            <a href="" class="mb-2.5 h-[34px]">
+                                Mobile & Tablet
+                            </a>
+                            </summary>
+                            <ul class="flex flex-col gap-y-3.5">
                                 <li><a href="" class="drp-link">Home Theater</a></li>
                                 <li><a href="" class="drp-link">Cell Phones</a></li>
                                 <li><a href="" class="drp-link">Smart TV</a></li>
