@@ -222,19 +222,65 @@
                 <button class="bg-[#89cedc] hidden sm:flex w-[1px] h-4"></button>
                 <a href="#" class="hidden sm:flex">Track Order</a>
                 <button class="bg-[#89cedc] hidden sm:flex w-[1px] h-4"></button>
-                <a href="#" class="flex items-center">USD $
-                    <svg xmlns="http://www.w3.org/2000/svg" height="18" class="fill-white pl-1" viewBox="0 -960 960 960"
-                        width="18">
-                        <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
-                    </svg>
-                </a>
+                <button (click)="dDCur()" class="flex items-center justify-center relative">
+                    <a class="flex items-center">USD $
+                        <svg xmlns="http://www.w3.org/2000/svg" height="18" class="fill-white pl-1"
+                            viewBox="0 -960 960 960" width="18">
+                            <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
+                        </svg>
+                    </a>
+                    <ul class="absolute top-[29px] -right-7 drop-shadow-sm bg-white z-30 text-black w-48 duration-300 origin-top overflow-hidden"
+                    [style.height]="!ddcur ? '0' : '105px'"
+                    >
+                        <li>
+                            <a href="" class="currency-a">
+                                Canada (CAD $)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="currency-a">
+                                France (EUR €)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="currency-a">
+                                United States (USD $)
+                            </a>
+                        </li>
+                    </ul>
+                </button>
+
+
+
                 <button class="bg-[#89cedc] w-[1px] h-4"></button>
-                <a href="#" class="flex items-center">English
-                    <svg xmlns="http://www.w3.org/2000/svg" height="18" class="fill-white pl-1" viewBox="0 -960 960 960"
-                        width="18">
-                        <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
-                    </svg>
-                </a>
+                <button (click)="dDLang()" class="flex items-center justify-center relative">
+                    <a class="flex items-center">English
+                        <svg xmlns="http://www.w3.org/2000/svg" height="18" class="fill-white pl-1"
+                            viewBox="0 -960 960 960" width="18">
+                            <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
+                        </svg>
+                    </a>
+                    <ul class="absolute top-[29px] -right-7 drop-shadow-sm bg-white z-30 text-black w-48 duration-300 origin-top overflow-hidden"
+                    [style.height]="!ddlang ? '0' : '105px'"
+                    >
+                        <li>
+                            <a href="" class="currency-a">
+                                Canada (CAD $)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="currency-a">
+                                France (EUR €)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="currency-a">
+                                United States (USD $)
+                            </a>
+                        </li>
+                    </ul>
+                </button>
+
             </div>
         </div>
 
@@ -488,9 +534,9 @@
                         <!-- Box 1 -->
                         <li class="w-1/3 mr-[15px]">
                             <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
-                            <a href="" class="mb-2.5 h-[34px]">
-                                Headphone
-                            </a>
+                                <a href="" class="mb-2.5 h-[34px]">
+                                    Headphone
+                                </a>
                             </summary>
                             <ul class="flex flex-col gap-y-3.5">
                                 <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Speaker</a></li>
@@ -502,9 +548,9 @@
                         <!-- Box 2 -->
                         <li class="w-1/3 mr-[15px]">
                             <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
-                            <a href="" class="mb-2.5 h-[34px]">
-                                Computer & Laptop
-                            </a>
+                                <a href="" class="mb-2.5 h-[34px]">
+                                    Computer & Laptop
+                                </a>
                             </summary>
                             <ul class="flex flex-col gap-y-3.5">
                                 <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Camera</a></li>
@@ -516,9 +562,9 @@
                         <!-- Box 3 -->
                         <li class="w-1/3 mr-[15px]">
                             <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
-                            <a href="" class="mb-2.5 h-[34px]">
-                                Mobile & Tablet
-                            </a>
+                                <a href="" class="mb-2.5 h-[34px]">
+                                    Mobile & Tablet
+                                </a>
                             </summary>
                             <ul class="flex flex-col gap-y-3.5">
                                 <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Home Theater</a></li>

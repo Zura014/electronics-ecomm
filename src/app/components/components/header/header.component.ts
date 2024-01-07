@@ -12,8 +12,25 @@ export class HeaderComponent {
   bmeh: boolean = false;
   bmec: boolean = false;
   bmem: boolean = false;
+  ddcur: boolean = false;
+  ddlang: boolean = false;
   
-
+  dDCur(): void {
+    if(this.ddlang){
+      this.ddcur = true;
+      this.ddlang = false;
+    } else{
+      this.ddcur =!this.ddcur;
+    }
+  }
+  dDLang(): void{
+    if(this.ddcur){
+      this.ddlang = true
+      this.ddcur = false;
+    }else{
+      this.ddlang = !this.ddlang;
+    }
+  }
   toggleBmem(): void { 
     this.bmem = !this.bmem;
   }

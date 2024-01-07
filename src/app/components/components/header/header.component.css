@@ -94,3 +94,17 @@
 .drp-links {
   font-size: 15px;
 }
+
+.currency-a{
+  padding: 7px 15px;
+  width: 100%;
+  float: left;
+  text-align: left;
+  border-bottom: 1px solid #f2f2f2;
+  color: #333;
+}
+
+.currency-a:hover{
+  background-color: #129cb8;
+  color: white;
+}
