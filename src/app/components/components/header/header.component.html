@@ -183,7 +183,7 @@
             <button class="absolute flex items-center justify-center h-full top-0 right-0">
                 <svg _ngcontent-ng-c1425525495="" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 980.04 981.7"
-                    class="hover:fill-[#129cb8] duration-500 hover:duration-500 w-[25px] mx-[15px] h-[18px] icon icon-header-search">
+                    class="hover:fill-[#129cb8] duration-300 hover:duration-300 w-[25px] mx-[15px] h-[18px] icon icon-header-search">
                     <g _ngcontent-ng-c1425525495="" id="_3_3" data-name="3_3">
                         <path _ngcontent-ng-c1425525495=""
                             d="M979.3,928.4,718.5,667.2a399.9,399.9,0,0,0,92.8-256.7C811.3,188.9,631.9,9.2,410.7,9.2S10,188.9,10,410.5,189.4,811.8,410.7,811.8A398.56,398.56,0,0,0,667,718.9L927.8,980.2a36.52,36.52,0,1,0,51.5-51.8ZM410.7,738.7C230,738.7,83,591.4,83,410.5S230,82.3,410.7,82.3,738.4,229.5,738.4,410.5,591.3,738.7,410.7,738.7Z"
@@ -231,8 +231,7 @@
                         </svg>
                     </a>
                     <ul class="absolute top-[29px] -right-7 drop-shadow-sm bg-white z-30 text-black w-48 duration-300 origin-top overflow-hidden"
-                    [style.height]="!ddcur ? '0' : '105px'"
-                    >
+                        [style.height]="!ddcur ? '0' : '105px'">
                         <li>
                             <a href="" class="currency-a">
                                 Canada (CAD $)
@@ -265,8 +264,7 @@
                         </svg>
                     </a>
                     <ul class="absolute top-[29px] -right-7 drop-shadow-sm bg-white z-30 text-black w-48 duration-300 origin-top overflow-hidden"
-                    [style.height]="!ddlang ? '0' : '105px'"
-                    >
+                        [style.height]="!ddlang ? '0' : '105px'">
                         <li>
                             <a href="" class="currency-a">
                                 Canada (CAD $)
@@ -301,12 +299,13 @@
                             alt="Electshop - Electronics Store (Password: demo)"
                             srcset="//electshop-codezeel.myshopify.com/cdn/shop/files/logo_39a8cbf7-99be-4abc-934a-8467c9131c29.png?v=1704443225&amp;width=225 225w, //electshop-codezeel.myshopify.com/cdn/shop/files/logo_39a8cbf7-99be-4abc-934a-8467c9131c29.png?v=1704443225&amp;width=338 338w, //electshop-codezeel.myshopify.com/cdn/shop/files/logo_39a8cbf7-99be-4abc-934a-8467c9131c29.png?v=1704443225&amp;width=450 450w"
                             width="225" height="41.7420814479638" loading="eager"
-                            class="header__heading-logo motion-reduce md:w-[160px] lg:w-[225px]" sizes="(max-width: 450px) 50vw, 225px">
+                            class="header__heading-logo motion-reduce md:w-[160px] lg:w-[225px]"
+                            sizes="(max-width: 450px) 50vw, 225px">
                     </a>
                 </div>
-                <div class="flex w-2/4 pl-[30px] pr-[10px] h-[45px] items-center">
-                    <input type="search" placeholder="Search Product Here..."
-                        class="w-full outline-none lg:w-10/12 xl:w-full placeholder:text-sm pl-5 pr-[15px] py-[5px] border-solid border rounded-l-md border-[#129cb8] h-full">
+                <div class="hidden md:flex w-2/4 pl-[30px] pr-[10px] h-[45px] items-center">
+                    <input type="search" placeholder="Search..."
+                        class="w-full outline-none placeholder:text-sm pl-5 pr-[15px] py-[5px] border-solid border-2 rounded-l-md border-[#129cb8] h-full">
                     <button class="xl:mr- bg-[#129cb8] flex rounded-r-md justify-center items-center h-full w-[50px]">
                         <span class="w-[60px] h-[30px]">
                             <svg id="Layer_1" class="fill-white w-5 mt-1 mx-5 h-5 icon icon-header-search"
@@ -321,27 +320,12 @@
                     </button>
                 </div>
 
-                <!-- Search Icon -->
-
                 <div class="w-auto h-[34px] sm:h-[40px] lg:h-[44px]">
                     <div class="flex h-full items-center justify-end">
-                        <div class="lg:hidden flex items-center" (click)="toggleSearch()">
-                            <a class="flex cursor-pointer items-center icons-div w-full h-full">
-                                <svg id="Layer_1"
-                                    class="hover:fill-[#129cb8] duration-500 hover:duration-500 w-5 mx-[15px]  h-5 icon icon-header-search"
-                                    data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.04 981.7">
-                                    <g id="_3_3" data-name="3_3">
-                                        <path
-                                            d="M979.3,928.4,718.5,667.2a399.9,399.9,0,0,0,92.8-256.7C811.3,188.9,631.9,9.2,410.7,9.2S10,188.9,10,410.5,189.4,811.8,410.7,811.8A398.56,398.56,0,0,0,667,718.9L927.8,980.2a36.52,36.52,0,1,0,51.5-51.8ZM410.7,738.7C230,738.7,83,591.4,83,410.5S230,82.3,410.7,82.3,738.4,229.5,738.4,410.5,591.3,738.7,410.7,738.7Z"
-                                            transform="translate(-10 -9.2)"></path>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
 
                         <div class="lg:mr-4 mt-[3px] hidden xs:flex items-center mr-2.5 lg:my-0">
                             <a href="#" class="icons-div w-full h-full ">
-                                <svg class="hover:fill-[#129cb8] svg-icon duration-500 hover:duration-500 lg:mr-[5px] icon icon-account"
+                                <svg class="hover:fill-[#129cb8] svg-icon duration-300 hover:duration-300 lg:mr-[5px] icon icon-account"
                                     version="1.0" xmlns="http://www.w3.org/2000/svg" width="28px" height="26px"
                                     viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
                                     <metadata>
@@ -378,7 +362,7 @@
                                 class="icons-div mr-[25px] flex items-center relative cm-compare-icon js-popup-button"
                                 data-js-information-input="compare" data-js-popup-button="compare-full">
 
-                                <svg class="svg-icon icon icon-compare hover:fill-[#129cb8] hover:duration-500 duration-500"
+                                <svg class="svg-icon icon icon-compare hover:fill-[#129cb8] hover:duration-300 duration-300"
                                     version="1.0" xmlns="http://www.w3.org/2000/svg" width="28px" height="26px"
                                     viewBox="0 0 4096.000000 4096.000000" preserveAspectRatio="xMidYMid meet">
                                     <metadata>
@@ -427,7 +411,7 @@
                                 class="icons-div mr-[25px] flex items-center relative  cm-wishlist-icon js-popup-button"
                                 data-js-information-input="wishlist" data-js-popup-button="wishlist-full">
 
-                                <svg class="svg-icon icon icon-cmheart hover:fill-[#129cb8] hover:duration-500 duration-500"
+                                <svg class="svg-icon icon icon-cmheart hover:fill-[#129cb8] hover:duration-300 duration-300"
                                     version="1.0" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"
                                     viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
                                     <metadata>
@@ -459,7 +443,7 @@
                                 class="flex relative header__icon header__icon--cart link link--text focus-inset"
                                 id="cart-icon-bubble">
 
-                                <svg class="icon svg-icon hover:fill-[#129cb8] duration-500 hover:duration-500 icon-cart-empty"
+                                <svg class="icon svg-icon hover:fill-[#129cb8] duration-300 hover:duration-300 icon-cart-empty"
                                     version="1.0" xmlns="http://www.w3.org/2000/svg" width="28px" height="26px"
                                     viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
                                     <metadata>
@@ -488,12 +472,12 @@
                                     </g>
                                 </svg>
                                 <span class="hidden sm:block font-semibold cart_price pl-[15px]">$0.00</span>
-                                        <!-- <span class="cart">My cart</span>  -->
+                                <!-- <span class="cart">My cart</span>  -->
                                 <div
                                     class="-top-[6px] ml-5 px-1.5 text-white bg-[#129cb8] rounded-full py-0.5 text-xs cart-count-bubble absolute">
                                     <span aria-hidden="true">0</span>
 
-                                            <!-- <span class="visually-hidden">0 items</span>  -->
+                                    <!-- <span class="visually-hidden">0 items</span>  -->
                                 </div>
                             </a>
                         </div>
@@ -513,71 +497,94 @@
 
 
             <ul class="flex justify-start font-semibold text-white items-center">
-                <li class="li-active-hover relative mr-[35px] py-4">
+                <li class="li-active-hover relative py-[17px] px-[26px]">
                     <a href="#" class="active-page">Home</a>
                 </li>
-                <li class="relative drp-hover mr-[35px] py-4">
-                    <a href="#" class="li-hover">Electronics</a>
+                <li class="relative cursor-pointer drp-hover py-[17px] px-[26px]">
+                    <a class="li-hover flex">Electronics
+                        <svg aria-hidden="true" focusable="false"
+                            class="absolute top-[25px] right-2.5 icon icon-caret w-2.5" viewBox="0 0 10 6">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                fill="currentColor">
+                            </path>
+                        </svg>
+                    </a>
                     <!-- Dropdown -->
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu text-black">
                         <!-- Box 1 -->
-                        <li class="w-1/3 mr-[15px]">
-                            <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
-                                <a href="" class="mb-2.5 h-[34px]">
+                        <li class="w-1/4 mr-[15px]">
+                            <summary class="duration-100 drp-link-title">
+                                <a href="" class="h-[34px]">
                                     Headphone
                                 </a>
                             </summary>
                             <ul class="flex flex-col gap-y-3.5">
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Speaker</a></li>
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Laptop</a></li>
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Headphone</a></li>
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Tablet</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Speaker</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Laptop</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Headphone</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Tablet</a></li>
                             </ul>
                         </li>
                         <!-- Box 2 -->
-                        <li class="w-1/3 mr-[15px]">
+                        <li class="w-1/4 mr-[15px]">
                             <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
-                                <a href="" class="mb-2.5 h-[34px]">
+                                <a href="" class="h-[34px]">
                                     Computer & Laptop
                                 </a>
                             </summary>
                             <ul class="flex flex-col gap-y-3.5">
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Camera</a></li>
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Android Tv</a></li>
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Mobile</a></li>
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Watch</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Camera</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Android Tv</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Mobile</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Watch</a></li>
                             </ul>
                         </li>
                         <!-- Box 3 -->
-                        <li class="w-1/3 mr-[15px]">
+                        <li class="w-1/4 mr-[15px]">
                             <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
-                                <a href="" class="mb-2.5 h-[34px]">
+                                <a href="" class="h-[34px]">
                                     Mobile & Tablet
                                 </a>
                             </summary>
                             <ul class="flex flex-col gap-y-3.5">
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Home Theater</a></li>
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Cell Phones</a></li>
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Smart TV</a></li>
-                                <li><a href="" class="hover:text-[#129cb8] duration-100 drp-link">Air Purifier</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Home Theater</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Cell Phones</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Smart TV</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Air Purifier</a></li>
                             </ul>
                         </li>
+                        <!-- Box 4-->
+                        <li class="w-1/4 mr-[15px]">
+                            <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
+                                <a href="" class="h-[34px]">
+                                    Mobile & Tablet
+                                </a>
+                            </summary>
+                            <ul class="flex flex-col gap-y-3.5">
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Home Theater</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Cell Phones</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Smart TV</a></li>
+                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Air Purifier</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
 
                 </li>
-                <li class="li-hover relative mr-[35px] py-4">
+                <li class="li-hover relative py-[17px] px-[26px]">
                     <a href="#">Today's Deal</a>
                 </li>
-                <li class="li-hover relative mr-[35px] py-4">
+                <li class="li-hover relative py-[17px] px-[26px]">
                     <a href="#">Summer Sale</a>
                 </li>
-                <li class="li-hover relative mr-[35px] py-4">
+                <li class="li-hover relative py-[17px] px-[26px]">
                     <a href="#">Smart Mobiles</a>
                 </li>
-                <li class="li-hover relative mr-[35px] py-4">
+                <li class="li-hover relative py-[17px] px-[26px]">
                     <a href="#">Mobile Accessories</a>
                 </li>
-                <li class="li-hover relative mr-[35px] py-4">
+                <li class="li-hover relative py-[17px] px-[26px]">
                     <a href="#">Blog</a>
                 </li>
             </ul>
