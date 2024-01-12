@@ -174,7 +174,7 @@
 
 <!-- Search Box -->
 
-<div class="block lg:hidden px-2.5 absolute top-0 left-0 w-full bg-white h-[15vh] z-40 duration-300"
+<!-- <div class="block lg:hidden px-2.5 absolute top-0 left-0 w-full bg-white h-[15vh] z-40 duration-300"
     [ngClass]="{'top-[-15vh] opacity-0 -z-50': !isClickedSearch}">
     <div class="flex justify-around items-center h-full w-full">
         <div class="w-[90%] sm:w-[95%] flex relative items-center">
@@ -205,16 +205,14 @@
             </button>
         </div>
     </div>
-</div>
-
-
-
+</div> -->
 
 <header class="flex flex-col relative">
     <!-- Upper section -->
-    <div class="flex items-center justify-around bg-[#129cb8] px-4 text-white pt-[9px] text-sm font-[400] pb-2.5">
-        <div class="flex items-center  justify-center lg:justify-between max-w-screen-xl w-full">
-            <div class="hidden lg:flex xl:translate-x-4">
+    <div class="hidden lg:flex items-center justify-around bg-white border-b text-black py-[5px] text-sm font-[400]">
+        <div
+            class="flex items-center justify-center lg:justify-between max-w-screen-xl h-[25px] px-[50px] mx-auto w-full">
+            <div class="hidden lg:flex">
                 <a href="#">Tell a friends about Electshop Electronics & get 30% off your next order.</a>
             </div>
             <div class="flex space-x-6 items-center justify-around">
@@ -224,30 +222,35 @@
                 <button class="bg-[#89cedc] hidden sm:flex w-[1px] h-4"></button>
                 <button (click)="dDCur()" class="flex items-center justify-center relative">
                     <a class="flex items-center">USD $
-                        <svg xmlns="http://www.w3.org/2000/svg" height="18" class="fill-white pl-1"
-                            viewBox="0 -960 960 960" width="18">
-                            <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
+                        <svg aria-hidden="true" focusable="false" class="icon icon-caret pl-1" height="7px"
+                            viewBox="0 0 10 6">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                fill="currentColor">
+                            </path>
                         </svg>
                     </a>
-                    <ul class="absolute top-[29px] -right-7 drop-shadow-sm bg-white z-30 text-black w-48 duration-300 origin-top overflow-hidden"
-                    [style.height]="!ddcur ? '0' : '105px'"
-                    >
-                        <li>
-                            <a href="" class="currency-a">
-                                Canada (CAD $)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="currency-a">
-                                France (EUR €)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="currency-a">
-                                United States (USD $)
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="absolute -right-7 mt-[19px] rounded-md border bg-white text-black w-36 duration-200 origin-top overflow-hidden"
+                        [style.top]="!ddcur ? '100%' : '8px'" [style.opacity]="!ddcur ? '0' : '100'"
+                        [style.z-index]="!ddcur ? '-30' : '30'">
+                        <ul class="py-[5px] flex flex-col w-full ">
+                            <li>
+                                <a href="" class="currency-a">
+                                    CAD $
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    EUR €
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    USD $
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </button>
 
 
@@ -255,30 +258,35 @@
                 <button class="bg-[#89cedc] w-[1px] h-4"></button>
                 <button (click)="dDLang()" class="flex items-center justify-center relative">
                     <a class="flex items-center">English
-                        <svg xmlns="http://www.w3.org/2000/svg" height="18" class="fill-white pl-1"
-                            viewBox="0 -960 960 960" width="18">
-                            <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
+                        <svg aria-hidden="true" focusable="false" class="icon icon-caret pl-1" height="7px"
+                            viewBox="0 0 10 6">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                fill="currentColor">
+                            </path>
                         </svg>
                     </a>
-                    <ul class="absolute top-[29px] -right-7 drop-shadow-sm bg-white z-30 text-black w-48 duration-300 origin-top overflow-hidden"
-                    [style.height]="!ddlang ? '0' : '105px'"
-                    >
-                        <li>
-                            <a href="" class="currency-a">
-                                Canada (CAD $)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="currency-a">
-                                France (EUR €)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="currency-a">
-                                United States (USD $)
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="absolute -right-7 mt-[19px] rounded-md border bg-white text-black w-36 duration-200 origin-top overflow-hidden"
+                        [style.top]="!ddlang ? '100%' : '8px'" [style.opacity]="!ddlang ? '0' : '100'"
+                        [style.z-index]="!ddlang ? '-30' : '30'">
+                        <ul class="py-[5px] flex flex-col w-full ">
+                            <li>
+                                <a href="" class="currency-a">
+                                    English
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    Français
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    Nederlands
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </button>
 
             </div>
@@ -288,42 +296,21 @@
     <!-- Mid section -->
     <div class="relative bg-white">
 
-        <div class="py-5 lg:py-[33px] px-[15px] mx-auto max-w-screen-md lg:max-w-screen-xl relative">
-
+        <div class="py-[15px] px-[17px] lg:py-[30px] lg:px-[50px] mx-auto lg:max-w-screen-xl relative">
 
             <div class="flex w-full items-center justify-between h-full">
-                <div class="flex gap-x-3 sm:gap-x-4 lg:gap-0 w-3/4 xs:w-1/2 lg:w-1/4 items-center">
-
-                    <div class="lg:hidden flex hamburger duration-500" (click)="toggleBM()">
-                        <a class="flex cursor-pointer">
-                            <svg version="1.1" class="w-5 h-5 icon duration-500 icon-hamburger"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000">
-
-                                <g>
-                                    <path
-                                        d="M928.8,261.7H71.3c-33.8,0-61.3-27.4-61.3-61.3c0-33.9,27.4-61.3,61.3-61.3h857.5c33.9,0,61.3,27.4,61.3,61.3C990,234.3,962.6,261.7,928.8,261.7z">
-                                    </path>
-                                    <path
-                                        d="M928.8,561.2H71.3C37.4,561.2,10,533.9,10,500c0-33.9,27.4-61.3,61.3-61.3h857.5c33.9,0,61.3,27.4,61.3,61.3C990,533.9,962.6,561.2,928.8,561.2z">
-                                    </path>
-                                    <path
-                                        d="M928.8,860.8H71.3c-33.8,0-61.3-27.4-61.3-61.3c0-33.9,27.4-61.3,61.3-61.3h857.5c33.9,0,61.3,27.4,61.3,61.3C990,833.4,962.6,860.8,928.8,860.8z">
-                                    </path>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
+                <div class="flex gap-x-3 sm:gap-x-4 lg:gap-0  w-auto items-center">
                     <a href="#">
-                        <img srcset="//electshop-codezeel.myshopify.com/cdn/shop/files/Logo_220x.png?v=1656140974 1x, //electshop-codezeel.myshopify.com/cdn/shop/files/Logo_220x@2x.png?v=1656140974 2x"
-                            src="//electshop-codezeel.myshopify.com/cdn/shop/files/Logo_220x.png?v=1656140974"
-                            loading="lazy" class="w-auto h-[27px] sm:h-[40px] sm:w-[211px] header__heading-logo"
-                            width="211" height="40" alt="Electshop - Electronics Store (Password: demo)" priority>
+                        <img src="//electshop-codezeel.myshopify.com/cdn/shop/files/logo_39a8cbf7-99be-4abc-934a-8467c9131c29.png?v=1704443225&amp;width=600"
+                            alt="Electshop - Electronics Store (Password: demo)"
+                            srcset="//electshop-codezeel.myshopify.com/cdn/shop/files/logo_39a8cbf7-99be-4abc-934a-8467c9131c29.png?v=1704443225&amp;width=225 225w, //electshop-codezeel.myshopify.com/cdn/shop/files/logo_39a8cbf7-99be-4abc-934a-8467c9131c29.png?v=1704443225&amp;width=338 338w, //electshop-codezeel.myshopify.com/cdn/shop/files/logo_39a8cbf7-99be-4abc-934a-8467c9131c29.png?v=1704443225&amp;width=450 450w"
+                            width="225" height="41.7420814479638" loading="eager"
+                            class="header__heading-logo motion-reduce md:w-[160px] lg:w-[225px]" sizes="(max-width: 450px) 50vw, 225px">
                     </a>
                 </div>
-                <div class="hidden w-2/4 ml-20 h-[40px] lg:h-[44px] lg:flex items-center">
+                <div class="flex w-2/4 pl-[30px] pr-[10px] h-[45px] items-center">
                     <input type="search" placeholder="Search Product Here..."
-                        class="w-8/12 outline-none lg:w-10/12 xl:w-full placeholder:text-sm pl-5 pr-[15px] py-[5px] border-solid border rounded-l-md border-[#129cb8] h-full">
+                        class="w-full outline-none lg:w-10/12 xl:w-full placeholder:text-sm pl-5 pr-[15px] py-[5px] border-solid border rounded-l-md border-[#129cb8] h-full">
                     <button class="xl:mr- bg-[#129cb8] flex rounded-r-md justify-center items-center h-full w-[50px]">
                         <span class="w-[60px] h-[30px]">
                             <svg id="Layer_1" class="fill-white w-5 mt-1 mx-5 h-5 icon icon-header-search"
@@ -340,7 +327,7 @@
 
                 <!-- Search Icon -->
 
-                <div class="w-1/4 xs:w-1/2 lg:w-1/4 h-[34px] sm:h-[40px] lg:h-[44px]">
+                <div class="w-auto h-[34px] sm:h-[40px] lg:h-[44px]">
                     <div class="flex h-full items-center justify-end">
                         <div class="lg:hidden flex items-center" (click)="toggleSearch()">
                             <a class="flex cursor-pointer items-center icons-div w-full h-full">
@@ -505,12 +492,12 @@
                                     </g>
                                 </svg>
                                 <span class="hidden sm:block font-semibold cart_price pl-[15px]">$0.00</span>
-                                <!--         <span class="cart">My cart</span> -->
+                                        <!-- <span class="cart">My cart</span>  -->
                                 <div
                                     class="-top-[6px] ml-5 px-1.5 text-white bg-[#129cb8] rounded-full py-0.5 text-xs cart-count-bubble absolute">
                                     <span aria-hidden="true">0</span>
 
-                                    <!--             <span class="visually-hidden">0 items</span> -->
+                                            <!-- <span class="visually-hidden">0 items</span>  -->
                                 </div>
                             </a>
                         </div>
@@ -521,9 +508,15 @@
         </div>
     </div>
     <!-- Lower section -->
-    <div class="items-center justify-around w-full border-t border-t-[rgb(221, 221, 221)] border-solid bg-white">
-        <div class="max-w-screen-xl hidden w-full lg:flex items-center  px-4 mx-auto text-sm text-black">
-            <ul class="flex justify-start font-semibold text-[#222222] items-center">
+    <div class="items-center justify-around w-full border-t border-t-[rgb(221, 221, 221)] border-solid bg-[#129cb8]">
+        <div class="max-w-screen-xl hidden w-full lg:flex items-center  px-4 lg:px-[50px] mx-auto text-sm text-white">
+            <!-- Browse All Categories -->
+            <div class="">
+
+            </div>
+
+
+            <ul class="flex justify-start font-semibold text-white items-center">
                 <li class="li-active-hover relative mr-[35px] py-4">
                     <a href="#" class="active-page">Home</a>
                 </li>

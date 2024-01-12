@@ -1,17 +1,16 @@
-
 <!-- Slides Component -->
 <div class="w-full -z-20">
+    <!-- Main div of slides -->
     <ul>
-        <li class="slider-img-1 w-full float-left relative top-0 left-0 opacity-100">
-            <img src="//electshop-codezeel.myshopify.com/cdn/shop/files/main-banner-1_1903x.jpg?v=1656304950;" draggable="false">
-            <div class="slider-text">
-
-            </div>
-        </li>
-        <li class="slider-img-2 cursor-pointer w-full float-left relative top-0 left-0 opacity-100 ">
-            <img src="//electshop-codezeel.myshopify.com/cdn/shop/files/main-banner-2_1903x.jpg?v=1656304950;" draggable="false">
-            <div class="slider-text">
-
+        <!-- Slides -->
+        <li *ngFor="let slide of slides" class="slider-img-1 w-full float-left relative top-0 left-0 opacity-100">
+            <!-- Slider Image -->
+            <img [src]="slide.img" alt="" [srcset]="slide.imgsrcset" height="650" loading="lazy" sizes="100vw">
+            <!-- Slider Text -->
+            <div class=" flex flex-col items-center justify-center">
+                <p>
+                    {{ slide.discount }}
+                </p>
             </div>
         </li>
     </ul>
