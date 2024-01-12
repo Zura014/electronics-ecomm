@@ -3,8 +3,8 @@ import {
   BrowserModule,
   provideClientHydration,
 } from '@angular/platform-browser';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatInputModule } from '@angular/material/input';
+// import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 import { SlidesComponent } from './components/components/slides/slides.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { SlidesComponent } from './components/components/slides/slides.component
     PageNotFoundComponent,
     SlidesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, NgOptimizedImage, MatInputModule, MatFormFieldModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, NgOptimizedImage, NoopAnimationsModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })

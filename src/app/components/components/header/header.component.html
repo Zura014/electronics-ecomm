@@ -4,22 +4,24 @@
     [ngClass]="{'left-[-100%] opacity-0 -z-50': !isClickedBM}">
 
     <div class="w-3/4 sm:w-1/2 md:w-1/3 overflow-hidden h-full absolute bg-white duration-300">
-        <div class="flex items-center justify-end p-4">
+        <div class="flex items-center justify-between text-sm px-[25px] py-[15px] border-b p-4">
+
+            {{ 'Menu' | uppercase }}
+
             <button class="flex justify-center items-center" (click)="toggleBM()">
-                <svg xmlns="http://www.w3.org/2000/svg" class="flex h-[30px] w-[30px]"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 40"
-                    style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                    <g>
-                        <path
-                            d="M17.4,16l9.3-9.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0L16,14.6L6.7,5.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l9.3,9.3l-9.3,9.3   c-0.4,0.4-0.4,1,0,1.4C5.5,26.9,5.7,27,6,27s0.5-0.1,0.7-0.3l9.3-9.3l9.3,9.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3   c0.4-0.4,0.4-1,0-1.4L17.4,16z" />
-                    </g>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                    class="w-[18px] h-[18px] icon icon-close" fill="none" viewBox="0 0 18 17">
+                    <path
+                        d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+                        fill="currentColor">
+                    </path>
                 </svg>
             </button>
         </div>
         <div class="absolute duration-300 bg-white -right-full w-full z-50 h-full" [ngClass]="{'right-0': bmeh}">
-            <div class="relative flex flex-col px-8 text-sm font-medium gap-y-6 justify-between items-start">
+            <div class="relative flex flex-col text-sm font-[400] py-2.5 justify-between items-start">
 
-                <div class="flex gap-x-2 items-center">
+                <div class="flex text-base gap-x-2 items-center py-3 mt-2 burger-arrow px-[26px]">
                     <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" (click)="toggleBmeh()" focusable="false"
                         role="presentation" class="cursor-pointer icon icon-arrow rotate-180 w-[13px] h-[12px]"
                         xmlns="http://www.w3.org/2000/svg">
@@ -29,19 +31,20 @@
                         </path>
                     </svg>
                     <a href="">
-                        Headphone
+                        Headphones
                     </a>
+
                 </div>
-                <a href="">Speaker</a>
-                <a href="">Laptop</a>
-                <a href="">Headphone</a>
-                <a href="">Tablet</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Speaker</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Laptop</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Headphone</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Tablet</a>
             </div>
         </div>
 
         <div class="absolute duration-300 bg-white -right-full w-full z-50 h-full" [ngClass]="{'right-0': bmec}">
-            <div class="relative flex flex-col px-8 text-sm font-medium gap-y-6 justify-between items-start">
-                <div class="flex gap-x-2 items-center">
+            <div class="relative flex flex-col text-sm font-[400] py-2.5 justify-between items-start">
+                <div class="flex text-base gap-x-2 items-center py-3 mt-2 burger-arrow px-[26px]">
                     <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" (click)="toggleBmec()" focusable="false"
                         role="presentation" class="cursor-pointer icon icon-arrow rotate-180 w-[13px] h-[12px]"
                         xmlns="http://www.w3.org/2000/svg">
@@ -53,17 +56,18 @@
                     <a href="">
                         Computer & Laptop
                     </a>
+
                 </div>
-                <a href="">Camera</a>
-                <a href="">Android Tv</a>
-                <a href="">Mobile</a>
-                <a href="">Watch</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Camera</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Android Tv</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Mobile</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Watch</a>
             </div>
         </div>
 
         <div class="absolute duration-300 bg-white -right-full w-full z-50 h-full" [ngClass]="{'right-0': bmem}">
-            <div class="relative flex flex-col px-8 text-sm font-medium gap-y-6 justify-between items-start">
-                <div class="flex gap-x-2 items-center">
+            <div class="relative flex flex-col text-sm font-[400] py-2.5 justify-between items-start">
+                <div class="flex text-base gap-x-2 items-center py-3 mt-2 burger-arrow px-[26px]">
                     <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" (click)="toggleBmem()" focusable="false"
                         role="presentation" class="cursor-pointer icon icon-arrow rotate-180 w-[13px] h-[12px]"
                         xmlns="http://www.w3.org/2000/svg">
@@ -75,19 +79,20 @@
                     <a href="">
                         Mobile & Tablet
                     </a>
+
                 </div>
-                <a href="">Home Theater</a>
-                <a href="">Cell Phones</a>
-                <a href="">Smart TV</a>
-                <a href="">Air Purifier</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Home Theater</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Cell Phones</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Smart TV</a>
+                <a href="" class="py-[10px] w-full float-left px-[25px] burger-arrow">Air Purifier</a>
             </div>
         </div>
 
 
         <div class="absolute duration-300 bg-white -right-full w-full z-40 h-full" [ngClass]="{'right-0': bme}">
 
-            <div class="relative flex flex-col px-8 text-sm font-medium gap-y-6 justify-between items-start">
-                <div class="flex gap-x-2 items-center">
+            <div class="relative flex flex-col text-base font-[400] justify-between items-start">
+                <div class="flex gap-x-2 items-center py-3 mt-2 burger-arrow px-[26px]">
                     <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" (click)="toggleBme()" focusable="false"
                         role="presentation" class="cursor-pointer icon icon-arrow rotate-180 w-[13px] h-[12px]"
                         xmlns="http://www.w3.org/2000/svg">
@@ -101,42 +106,35 @@
                     </a>
 
                 </div>
-                <div class="w-full relative">
-                    <a href="#" class="w-full relative">Headphone</a>
+                <div class="w-full relative burger-arrow">
+                    <a href="#" class="relative w-full float-left pl-[25px] py-2.5 pr-[52px]">Headphones</a>
                     <svg (click)="toggleBmeh()" viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
-                        role="presentation"
-                        class="cursor-pointer absolute top-1 right-0 w-[13px] h-[12px] icon icon-arrow"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
+                        class="cursor-pointer absolute top-[50%] -translate-y-1/2 right-5 w-[15px] icon icon-arrow fill-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path clip-rule="evenodd"
                             d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
                             fill="currentColor">
                         </path>
                     </svg>
                 </div>
-                <div class="w-full relative">
-                    <a href="">
-                        Computer & Laptop
-                    </a>
+                <div class="w-full relative burger-arrow">
+                    <a href="#" class="relative w-full float-left pl-[25px] py-2.5 pr-[52px]">Computer & Laptop</a>
                     <svg (click)="toggleBmec()" viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
-                        role="presentation"
-                        class="cursor-pointer absolute top-1 right-0 w-[13px] h-[12px] icon icon-arrow"
+                        class="cursor-pointer absolute top-[50%] -translate-y-1/2 right-5 w-[15px] icon icon-arrow fill-white"
                         xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
+                        <path clip-rule="evenodd"
                             d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
                             fill="currentColor">
                         </path>
                     </svg>
-
                 </div>
-                <div class="w-full relative">
-                    <a href="">
-                        Mobile & Tablet
-                    </a>
+                <div class="w-full relative burger-arrow">
+                    <a href="#" class="relative w-full float-left pl-[25px] py-2.5 pr-[52px]">Mobile & Tablet</a>
                     <svg (click)="toggleBmem()" viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
-                        role="presentation"
-                        class="cursor-pointer absolute top-1 right-0 w-[13px] h-[12px] icon icon-arrow"
+                        class="cursor-pointer absolute top-[50%] -translate-y-1/2 right-5 w-[15px] icon icon-arrow fill-white"
                         xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
+                        <path clip-rule="evenodd"
                             d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
                             fill="currentColor">
                         </path>
@@ -145,25 +143,29 @@
             </div>
 
         </div>
-        <div class="relative flex flex-col px-8 text-sm font-medium gap-y-6 justify-between items-start">
-            <a href="#">Home</a>
-            <div class="w-full relative">
-                <a href="#" class="w-full relative">Electronics</a>
+        <div class="border-b mb-2.5 relative flex flex-col py-2.5 text-sm font-medium justify-between items-start">
+            <a href="#" class="py-[10px] w-full float-left px-[25px] burger-arrow">Home</a>
+            <div class="w-full relative burger-arrow">
+                <a href="#" class="relative w-full float-left pl-[25px] py-2.5 pr-[52px]">Electronics</a>
                 <svg (click)="toggleBme()" viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false"
-                    role="presentation" class="cursor-pointer absolute top-1 right-0 w-[13px] h-[12px] icon icon-arrow"
+                    class="cursor-pointer absolute top-[50%] -translate-y-1/2 right-5 w-[15px] icon icon-arrow fill-white"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
+                    <path clip-rule="evenodd"
                         d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z"
                         fill="currentColor">
                     </path>
                 </svg>
             </div>
-            <a href="#">Today's Deal</a>
-            <a href="#">Summer Sale</a>
-            <a href="#">Smart Mobiles</a>
-            <a href="#">Mobile Accessories</a>
-            <a href="#">Blog</a>
-            <p>Tell a friends about Electshop Electronics & get 30% off your next order.</p>
+            <a href="#" class="py-[10px] w-full float-left px-[25px] burger-arrow">Today's Deal</a>
+            <a href="#" class="py-[10px] w-full float-left px-[25px] burger-arrow">Summer Sale</a>
+            <a href="#" class="py-[10px] w-full float-left px-[25px] burger-arrow">Smart Mobiles</a>
+            <a href="#" class="py-[10px] w-full float-left px-[25px] burger-arrow">Mobile Accessories</a>
+            <a href="#" class="py-[10px] w-full float-left px-[25px] burger-arrow">Blog</a>
+        </div>
+        <div class="text-sm">
+            <a href="#" class="py-[10px] w-full float-left px-[25px] burger-arrow">Need Help?</a>
+            <a href="#" class="py-[10px] w-full float-left px-[25px] burger-arrow">Gift Cards</a>
+            <p class="px-[25px] py-[10px]">Tell a friends about Electshop Electronics & get 30% off your next order.</p>
         </div>
     </div>
 
@@ -218,37 +220,40 @@
             <div class="flex space-x-6 items-center justify-around">
                 <a href="#" class="hidden sm:flex">Need Help?</a>
                 <button class="bg-[#89cedc] hidden sm:flex w-[1px] h-4"></button>
-                <a href="#" class="hidden sm:flex">Track Order</a>
+                <a href="#" class="hidden sm:flex">Gift Cards</a>
                 <button class="bg-[#89cedc] hidden sm:flex w-[1px] h-4"></button>
                 <button (click)="dDCur()" class="flex items-center justify-center relative">
                     <a class="flex items-center">USD $
-                        <svg aria-hidden="true" focusable="false" class="duration-200 icon icon-caret pl-1" height="7px" 
-                        [style.transform]="!ddcur? 'rotate(0deg) translateX(0px)' : 'rotate(180deg)  translateX(-4px)'"
-                            viewBox="0 0 10 6">
+                        <svg aria-hidden="true" focusable="false" class="icon icon-caret duration-300 pl-1" height="7px"
+                            viewBox="0 0 10 6"
+                            [style.transform]="!ddcur? 'rotate(0deg) translateX(0px)' : 'rotate(180deg)  translateX(-4px)'">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
                                 fill="currentColor">
                             </path>
                         </svg>
                     </a>
-                    <ul class="absolute top-[29px] -right-7 drop-shadow-sm bg-white z-30 text-black w-48 duration-300 origin-top overflow-hidden"
-                        [style.height]="!ddcur ? '0' : '105px'">
-                        <li>
-                            <a href="" class="currency-a">
-                                Canada (CAD $)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="currency-a">
-                                France (EUR €)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="currency-a">
-                                United States (USD $)
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="absolute -right-7 mt-[19px] rounded-md border bg-white text-black w-36 duration-200 origin-top overflow-hidden"
+                        [style.top]="!ddcur ? '100%' : '8px'" [style.opacity]="!ddcur ? '0' : '100'"
+                        [style.z-index]="!ddcur ? '-30' : '30'">
+                        <ul class="py-[5px] flex flex-col w-full ">
+                            <li>
+                                <a href="" class="currency-a">
+                                    CAD $
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    EUR €
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    USD $
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </button>
 
 
@@ -256,34 +261,36 @@
                 <button class="bg-[#89cedc] w-[1px] h-4"></button>
                 <button (click)="dDLang()" class="flex items-center justify-center relative">
                     <a class="flex items-center">English
-                        <svg 
-                        aria-hidden="true" focusable="false" class="duration-200 icon icon-caret pl-1" height="7px"
-                        [style.transform]="!ddlang? 'rotate(0deg) translateX(0px)' : 'rotate(180deg)  translateX(-4px)'"
-                        viewBox="0 0 10 6">
+                        <svg aria-hidden="true" focusable="false" class="icon icon-caret pl-1 duration-300" height="7px"
+                            [style.transform]="!ddlang? 'rotate(0deg) translateX(0px)' : 'rotate(180deg)  translateX(-4px)'"
+                            viewBox="0 0 10 6">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
                                 fill="currentColor">
                             </path>
                         </svg>
                     </a>
-                    <ul class="absolute top-[29px] -right-7 drop-shadow-sm bg-white z-30 text-black w-48 duration-300 origin-top overflow-hidden"
-                        [style.height]="!ddlang ? '0' : '105px'">
-                        <li>
-                            <a href="" class="currency-a">
-                                Canada (CAD $)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="currency-a">
-                                France (EUR €)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="currency-a">
-                                United States (USD $)
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="absolute -right-7 mt-[19px] rounded-md border bg-white text-black w-36 duration-200 origin-top overflow-hidden"
+                        [style.top]="!ddlang ? '100%' : '8px'" [style.opacity]="!ddlang ? '0' : '100'"
+                        [style.z-index]="!ddlang ? '-30' : '30'">
+                        <ul class="py-[5px] flex flex-col w-full ">
+                            <li>
+                                <a href="" class="currency-a">
+                                    English
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    Français
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    Nederlands
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </button>
 
             </div>
@@ -295,23 +302,23 @@
 
         <div class="py-[15px] px-[17px] lg:py-[30px] lg:px-[50px] mx-auto lg:max-w-screen-xl relative">
 
-            <div class="flex w-full items-center justify-between h-full">
+            <div class="flex w-full items-center justify-between gap-x-6 h-full">
                 <div class="flex gap-x-3 sm:gap-x-4 lg:gap-0  w-auto items-center">
                     <a href="#">
                         <img src="//electshop-codezeel.myshopify.com/cdn/shop/files/logo_39a8cbf7-99be-4abc-934a-8467c9131c29.png?v=1704443225&amp;width=600"
                             alt="Electshop - Electronics Store (Password: demo)"
                             srcset="//electshop-codezeel.myshopify.com/cdn/shop/files/logo_39a8cbf7-99be-4abc-934a-8467c9131c29.png?v=1704443225&amp;width=225 225w, //electshop-codezeel.myshopify.com/cdn/shop/files/logo_39a8cbf7-99be-4abc-934a-8467c9131c29.png?v=1704443225&amp;width=338 338w, //electshop-codezeel.myshopify.com/cdn/shop/files/logo_39a8cbf7-99be-4abc-934a-8467c9131c29.png?v=1704443225&amp;width=450 450w"
-                            width="225" height="41.7420814479638" loading="eager"
-                            class="header__heading-logo motion-reduce md:w-[160px] lg:w-[225px]"
-                            sizes="(max-width: 450px) 50vw, 225px">
+                            loading="eager" class="header__heading-logo motion-reduce w-[160px] md:w-[221px]">
                     </a>
                 </div>
-                <div class="hidden md:flex w-2/4 pl-[30px] pr-[10px] h-[45px] items-center">
+                <div
+                    class="hidden md:flex w-2/4 pl-[30px] pr-[10px] lgxl:pl-[70px] lgxl:pr-[30px] h-[45px] items-center">
                     <input type="search" placeholder="Search..."
                         class="w-full outline-none placeholder:text-sm p-2.5 border-solid border-2 rounded-l-md border-[#129cb8] h-full">
                     <button class="xl:mr- bg-[#129cb8] flex rounded-r-md justify-center items-center h-full w-[50px]">
                         <span class="w-[60px] h-[30px]">
-                            <svg id="Layer_1" class="fill-white w-5 mt-1 mx-5 h-5 icon icon-header-search"
+                            <svg id="Layer_1"
+                                class="hover:fill-[#129cb8] duration-300 hover:duration-300 fill-white w-5 mt-1 mx-5 h-5 icon icon-header-search"
                                 data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.04 981.7">
                                 <g id="_3_3" data-name="3_3">
                                     <path
@@ -323,117 +330,71 @@
                     </button>
                 </div>
 
-                <div class="w-auto h-[34px] sm:h-[40px] lg:h-[44px]">
+
+                <!-- Right Half -->
+
+                <div class="w-auto h-[34px] sm:h-[35px] lg:h-[44px]">
                     <div class="flex h-full items-center justify-end">
 
-                        <div class="lg:mr-4 mt-[3px] hidden xs:flex items-center mr-2.5 lg:my-0">
-                            <a href="#" class="icons-div w-full h-full ">
-                                <svg class="hover:fill-[#129cb8] svg-icon duration-300 hover:duration-300 lg:mr-[5px] icon icon-account"
-                                    version="1.0" xmlns="http://www.w3.org/2000/svg" width="28px" height="26px"
-                                    viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
-                                    <metadata>
-                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
-                                    </metadata>
-                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-                                        stroke="none">
-                                        <path d="M2350 5113 c-175 -28 -327 -80 -444 -150 -181 -108 -346 -272 -454
-                                -450 -56 -92 -106 -220 -134 -338 -29 -125 -36 -375 -14 -501 64 -368 285
-                                -680 618 -871 328 -188 765 -204 1124 -42 120 54 233 137 350 253 262 262 377
-                                560 361 928 -15 327 -126 584 -354 815 -182 185 -409 304 -660 348 -79 14
-                                -327 19 -393 8z m428 -332 c150 -44 286 -127 405 -248 119 -121 185 -232 234
-                                -390 25 -81 27 -101 27 -258 -1 -155 -3 -178 -27 -258 -46 -151 -113 -263
-                                -231 -385 -176 -183 -410 -282 -660 -282 -248 1 -452 82 -629 250 -138 131
-                                -222 264 -269 427 -20 68 -23 100 -22 253 0 162 2 182 28 265 68 221 225 416
-                                436 541 78 46 154 75 261 99 97 22 351 14 447 -14z"></path>
-                                        <path d="M1410 2644 c-231 -34 -406 -120 -553 -271 -280 -288 -437 -799 -437
-                                -1424 0 -264 19 -358 103 -524 31 -61 63 -102 132 -171 98 -99 183 -155 302
-                                -197 165 -60 110 -58 1639 -55 l1399 3 85 26 c108 34 165 59 237 105 167 106
-                                290 274 343 464 32 119 41 261 30 480 -50 980 -422 1532 -1055 1567 -136 7
-                                -138 7 -371 -143 -180 -115 -305 -172 -471 -215 -125 -33 -349 -33 -473 -1
-                                -177 46 -296 101 -476 218 -66 43 -147 93 -182 111 -58 30 -71 33 -145 32 -45
-                                -1 -93 -3 -107 -5z m265 -401 c179 -115 312 -180 467 -227 302 -91 588 -85
-                                889 20 137 47 235 98 412 212 l148 94 61 -6 c369 -42 593 -344 693 -931 30
-                                -174 48 -499 35 -616 -27 -242 -178 -410 -418 -466 -72 -17 -159 -18 -1412
-                                -18 -1484 0 -1390 -4 -1539 67 -82 39 -185 140 -223 218 -48 100 -58 162 -58
-                                356 1 527 124 961 342 1199 84 92 189 151 323 180 113 25 116 24 280 -82z"></path>
-                                    </g>
+                        <div class="hidden lgxl:flex items-center border-r mr-[14px] pr-[25px]">
+                            <a href="" class="hover:text-[#129cb8] duration-100 hover:duration-100">Login</a>
+                            /
+                            <a href="" class="hover:text-[#129cb8] duration-100 hover:duration-100">Register</a>
+                        </div>
+
+                        <div class="flex lgxl:hidden items-center">
+                            <a href="#"
+                                class="icons-div mr-[25px] flex items-center relative cm-compare-icon js-popup-button"
+                                data-js-information-input="compare" data-js-popup-button="compare-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                    class="icon icon-account fill-black" width="25px" height="25px" fill="none"
+                                    viewBox="0 0 18 19">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6 4.5a3 3 0 116 0 3 3 0 01-6 0zm3-4a4 4 0 100 8 4 4 0 000-8zm5.58 12.15c1.12.82 1.83 2.24 1.91 4.85H1.51c.08-2.6.79-4.03 1.9-4.85C4.66 11.75 6.5 11.5 9 11.5s4.35.26 5.58 1.15zM9 10.5c-2.5 0-4.65.24-6.17 1.35C1.27 12.98.5 14.93.5 18v.5h17V18c0-3.07-.77-5.02-2.33-6.15-1.52-1.1-3.67-1.35-6.17-1.35z"
+                                        fill="currentColor">
+                                    </path>
                                 </svg>
                             </a>
                         </div>
-                        <div class="hidden lg:flex items-center">
+                        <div class="hidden sm:flex items-center">
                             <a href="#"
                                 class="icons-div mr-[25px] flex items-center relative cm-compare-icon js-popup-button"
                                 data-js-information-input="compare" data-js-popup-button="compare-full">
 
-                                <svg class="svg-icon icon icon-compare hover:fill-[#129cb8] hover:duration-300 duration-300"
-                                    version="1.0" xmlns="http://www.w3.org/2000/svg" width="28px" height="26px"
-                                    viewBox="0 0 4096.000000 4096.000000" preserveAspectRatio="xMidYMid meet">
-                                    <metadata>
-                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
-                                    </metadata>
-                                    <g transform="translate(0.000000,4096.000000) scale(0.100000,-0.100000)"
-                                        stroke="none">
-                                        <path d="M20336 36859 c-82 -12 -166 -34 -241 -64 -86 -35 -19562 -10285
-                                -19646 -10340 -195 -128 -352 -345 -421 -580 -21 -72 -23 -100 -23 -275 0
-                                -175 2 -203 23 -275 69 -235 226 -452 421 -580 56 -37 19281 -10161 19551
-                                -10296 281 -140 578 -157 854 -48 94 37 19562 10281 19657 10344 195 128 352
-                                345 421 580 21 72 23 100 23 275 0 175 -2 203 -23 275 -69 235 -226 452 -421
-                                580 -84 56 -19556 10304 -19644 10339 -166 66 -359 90 -531 65z m8767 -6723
-                                c4734 -2491 8607 -4532 8607 -4536 0 -4 -2208 -1169 -4907 -2590 -2700 -1421
-                                -6566 -3457 -8593 -4524 -2027 -1067 -3697 -1944 -3711 -1949 -23 -9 -386 179
-                                -3565 1853 -1946 1025 -5193 2734 -7214 3798 -2021 1064 -4304 2265 -5072
-                                2670 -769 405 -1398 739 -1398 742 0 10 17223 9071 17236 9068 6 -2 3883
-                                -2041 8617 -4532z"></path>
-                                        <path d="M860 20483 c-402 -63 -727 -342 -840 -722 -18 -60 -20 -97 -20 -299
-                                0 -262 6 -294 86 -457 81 -167 227 -326 380 -417 99 -58 19433 -10234 19569
-                                -10299 163 -78 238 -94 445 -94 209 0 282 16 455 99 239 115 19505 10261
-                                19581 10312 91 60 219 189 277 277 55 83 112 209 139 307 20 76 23 106 22 275
-                                0 178 -2 196 -28 279 -60 198 -187 389 -339 511 -94 76 -264 164 -376 194
-                                -229 63 -496 41 -704 -57 -45 -21 -932 -487 -1972 -1034 -1039 -548 -4016
-                                -2115 -6615 -3483 -2599 -1368 -6011 -3164 -7582 -3992 l-2858 -1504 -1622
-                                854 c-893 470 -3407 1794 -5588 2942 -6098 3210 -7814 4114 -9910 5217 -2004
-                                1055 -2015 1061 -2181 1088 -61 9 -265 12 -319 3z"></path>
-                                        <path d="M880 14344 c-70 -9 -206 -47 -279 -78 -271 -114 -487 -353 -575 -634
-                                -25 -79 -26 -94 -26 -312 0 -219 1 -233 26 -312 70 -222 215 -415 405 -540
-                                105 -69 19565 -10311 19674 -10355 230 -92 520 -92 750 0 101 41 19542 10271
-                                19650 10341 150 97 298 269 370 431 59 133 77 219 83 384 5 170 -4 247 -46
-                                371 -95 287 -312 517 -595 629 -131 52 -261 74 -417 68 -193 -6 -270 -29 -505
-                                -147 -104 -53 -1425 -747 -2935 -1542 -8754 -4610 -15972 -8408 -15980 -8408
-                                -5 0 -3151 1654 -6992 3676 -3841 2022 -8088 4258 -9440 4970 -1351 711 -2498
-                                1314 -2550 1340 -108 54 -175 79 -273 100 -70 16 -279 26 -345 18z"></path>
-                                    </g>
+                                <svg id="Layer_1"
+                                    class="icon not-added hover:fill-[#129cb8] duration-300 hover:duration-300 fill-black"
+                                    width="28px" height="28px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 15">
+                                    <path
+                                        d="M10,12a.41.41,0,0,1-.19,0L.31,8A.5.5,0,0,1,.31,7l9.5-4a.5.5,0,0,1,.38,0l9.5,4a.5.5,0,0,1,0,.92l-9.5,4A.41.41,0,0,1,10,12ZM1.79,7.5,10,11,18.21,7.5,10,4Z"
+                                        transform="translate(0 -3)"></path>
+                                    <path
+                                        d="M10,15a.41.41,0,0,1-.19,0L.31,11A.5.5,0,0,1,.69,10L10,14,19.31,10a.5.5,0,0,1,.38.92l-9.5,4A.41.41,0,0,1,10,15Z"
+                                        transform="translate(0 -3)"></path>
+                                    <path
+                                        d="M10,18a.41.41,0,0,1-.19,0L.31,14A.5.5,0,0,1,.69,13L10,17,19.31,13a.5.5,0,0,1,.38.92l-9.5,4A.41.41,0,0,1,10,18Z"
+                                        transform="translate(0 -3)"></path>
                                 </svg>
 
                                 <div class="absolute -top-[6px]  ml-5 -right-2.5 px-1.5 text-white bg-[#129cb8] rounded-full py-0.5 text-xs"
                                     data-js-compare-count="0">0</div>
                             </a>
                         </div>
-                        <div class="hidden lg:flex items-center">
+                        <div class="hidden sm:flex items-center">
 
                             <a href="#"
                                 class="icons-div mr-[25px] flex items-center relative  cm-wishlist-icon js-popup-button"
                                 data-js-information-input="wishlist" data-js-popup-button="wishlist-full">
 
-                                <svg class="svg-icon icon icon-cmheart hover:fill-[#129cb8] hover:duration-300 duration-300"
-                                    version="1.0" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"
-                                    viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
-                                    <metadata>
-                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
-                                    </metadata>
-                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-                                        stroke="none">
-                                        <path d="M1250 4931 c-608 -89 -1086 -554 -1222 -1187 -20 -95 -23 -136 -23
-                                -324 1 -185 4 -229 23 -315 61 -274 180 -515 355 -715 156 -180 2050 -2167
-                                2084 -2187 46 -28 127 -30 177 -7 32 16 2004 2085 2123 2229 155 186 267 421
-                                325 680 19 86 22 130 23 315 0 188 -3 229 -23 324 -85 396 -315 746 -630 959
-                                -134 90 -337 176 -502 212 -103 22 -360 31 -469 15 -210 -30 -406 -102 -579
-                                -214 -95 -62 -133 -93 -251 -209 l-103 -102 -52 56 c-215 236 -461 380 -765
-                                450 -96 23 -392 34 -491 20z m310 -371 c107 -14 216 -44 304 -84 145 -66 211
-                                -118 406 -316 102 -104 198 -194 213 -200 36 -13 118 -13 154 0 15 6 111 95
-                                213 199 200 203 271 258 420 322 323 139 689 105 981 -91 91 -61 239 -213 304
-                                -314 134 -206 196 -412 196 -655 -1 -259 -79 -496 -231 -700 -48 -63 -1942
-                                -2073 -1959 -2078 -12 -3 -1904 2005 -1959 2079 -298 399 -307 945 -24 1373
-                                59 88 207 239 291 295 204 137 460 200 691 170z"></path>
+                                <svg class="icon icon-wishlist fill-black hover:fill-[#129cb8] duration-300 hover:duration-300"
+                                    width="28px" height="28px" version="1.1" id="Layer_1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    x="0px" y="0px" viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;"
+                                    xml:space="preserve">
+                                    <g>
+                                        <path
+                                            d="M561.2,192.4c31.2-24.5,106.9-89.1,229.4-33.4c127,57.9,138.1,204.9,131.4,251.6c-22.3,202.7-423.2,447.6-423.2,447.6   c-358.5-236-414.2-383-423.1-445.3C69,350.5,82.4,208,207.1,161.2s198.2,8.9,229.4,33.4c11.1,8.9,24.5,20,33.4,31.2   c13.4,15.6,37.9,15.6,53.5,0C536.7,214.7,547.9,201.3,561.2,192.4z M481.1,925.1c11.1,6.7,24.5,6.7,35.6,0   c62.4-40.1,276.2-180.4,392-336.3C1044.5,404,979.9,257,930.9,190.2C882,123.3,804,69.9,686,69.9c-100.2,2.2-162.6,53.5-180.4,69   c-4.5,4.5-8.9,4.5-11.1,2.2c-17.8-15.6-82.4-66.8-180.4-69c-118-2.2-196,53.5-245,120.3S-44.5,406.2,91.3,591   C204.9,746.9,418.7,887.2,481.1,925.1z">
+                                        </path>
                                     </g>
                                 </svg>
 
@@ -446,35 +407,40 @@
                                 class="flex relative header__icon header__icon--cart link link--text focus-inset"
                                 id="cart-icon-bubble">
 
-                                <svg class="icon svg-icon hover:fill-[#129cb8] duration-300 hover:duration-300 icon-cart-empty"
-                                    version="1.0" xmlns="http://www.w3.org/2000/svg" width="28px" height="26px"
-                                    viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
-                                    <metadata>
-                                        Created by potrace 1.16, written by Peter Selinger 2001-2019
-                                    </metadata>
-                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-                                        stroke="none">
-                                        <path d="M66 4791 c-46 -31 -66 -69 -66 -131 0 -62 20 -100 66 -131 27 -18 54
-                                -19 444 -19 l415 0 268 -1208 c147 -664 267 -1211 267 -1217 0 -5 -23 -23 -51
-                                -40 -67 -39 -132 -114 -171 -195 -27 -56 -32 -79 -36 -166 -3 -79 -1 -113 13
-                                -155 46 -143 152 -251 292 -300 45 -15 85 -19 202 -20 l146 0 -52 -19 c-188
-                                -67 -303 -231 -303 -430 0 -259 191 -450 450 -450 259 0 450 191 450 450 0
-                                199 -115 363 -303 430 -51 18 -40 19 913 19 953 0 964 -1 913 -19 -188 -67
-                                -303 -231 -303 -430 0 -259 191 -450 450 -450 259 0 450 191 450 450 0 200
-                                -115 363 -304 430 l-51 19 130 0 c110 1 134 4 159 20 46 31 66 69 66 131 0 59
-                                -19 98 -61 128 -22 16 -130 17 -1434 22 l-1410 5 -35 22 c-95 59 -94 198 2
-                                250 31 17 107 18 1439 21 l1407 2 41 38 41 37 305 1067 c206 720 305 1083 305
-                                1115 0 32 -7 57 -22 80 -47 68 106 63 -1937 63 l-1851 0 -5 23 c-3 12 -27 121
-                                -54 242 -27 121 -54 232 -59 246 -6 15 -28 40 -49 58 l-38 31 -505 0 c-478 0
-                                -507 -1 -534 -19z m4694 -893 c-1 -7 -115 -411 -254 -898 l-253 -885 -1239 -2
-                                -1239 -3 -198 893 c-109 490 -197 895 -197 900 0 4 761 7 1690 7 1346 0 1690
-                                -3 1690 -12z m-2736 -3017 c43 -29 66 -70 66 -121 0 -80 -60 -140 -140 -140
-                                -80 0 -140 60 -140 140 0 80 60 140 140 140 27 0 56 -8 74 -19z m2120 0 c43
-                                -29 66 -70 66 -121 0 -80 -60 -140 -140 -140 -80 0 -140 60 -140 140 0 80 60
-                                140 140 140 27 0 56 -8 74 -19z"></path>
-                                    </g>
+                                <svg id="Layer_1"
+                                    class="icon fill-black hover:fill-[#129cb8] duration-300 hover:duration-300"
+                                    width="30px" height="30px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 762.47 673.5">
+                                    <path
+                                        d="M600.86,489.86a91.82,91.82,0,1,0,91.82,91.82A91.81,91.81,0,0,0,600.86,489.86Zm0,142.93a51.12,51.12,0,1,1,51.11-51.11A51.12,51.12,0,0,1,600.82,632.79Z">
+                                    </path>
+                                    <path
+                                        d="M303.75,489.86a91.82,91.82,0,1,0,91.82,91.82A91.82,91.82,0,0,0,303.75,489.86Zm-.05,142.93a51.12,51.12,0,1,1,51.12-51.11A51.11,51.11,0,0,1,303.7,632.79Z">
+                                    </path>
+                                    <path
+                                        d="M392.07,561.33h66.55a20.52,20.52,0,0,1,20.46,20.46h0a20.52,20.52,0,0,1-20.46,20.46H392.07">
+                                    </path>
+                                    <path
+                                        d="M698.19,451.14H205.93a23.11,23.11,0,0,1-23.09-22c0-.86-.09-1.72-.19-2.57l-1.82-16.36H723.51L721.3,428A23.11,23.11,0,0,1,698.19,451.14Z">
+                                    </path>
+                                    <path
+                                        d="M759.15,153.79H246.94l-3.32-24.38a17.25,17.25,0,0,1,17.25-17.26H745.21a17.26,17.26,0,0,1,17.26,17.26Z">
+                                    </path>
+                                    <path
+                                        d="M271.55,345.56l-31.16-208A20.53,20.53,0,0,1,257.13,114h0a20.53,20.53,0,0,1,23.6,16.74l31.16,208a20.52,20.52,0,0,1-16.74,23.59h0A20.52,20.52,0,0,1,271.55,345.56Z">
+                                    </path>
+                                    <path
+                                        d="M676,451.15l48.69-337.74,22.9.07a17.25,17.25,0,0,1,14.55,19.59l-42.1,303.16a17.24,17.24,0,0,1-19.59,14.54Z">
+                                    </path>
+                                    <path
+                                        d="M184.24,436.27,123.7.12l23.72,0a17.26,17.26,0,0,1,19.33,14.92l60.56,436.35-23.74-.25A17.25,17.25,0,0,1,184.24,436.27Z">
+                                    </path>
+                                    <path
+                                        d="M148.38,40.77H20.26A20.32,20.32,0,0,1,0,20.51H0A20.32,20.32,0,0,1,20.26.25H148.38">
+                                    </path>
                                 </svg>
-                                <span class="hidden sm:block font-semibold cart_price pl-[15px]">$0.00</span>
+
+                                <span class="hidden sm:block font-semibold cart_price pl-[15px]"></span>
                                 <!-- <span class="cart">My cart</span>  -->
                                 <div
                                     class="-top-[6px] ml-5 px-1.5 text-white bg-[#129cb8] rounded-full py-0.5 text-xs cart-count-bubble absolute">
@@ -484,6 +450,12 @@
                                 </div>
                             </a>
                         </div>
+                        <span
+                            class="hidden text-[15px] w-[62.22px] lg:flex font-[500] cart_price flex-col text-center">My
+                            Cart <br><span class="font-[400]">$0.00</span></span>
+                        <span
+                            class="text-[15px] w-[62.22px] flex font-[400] cart_price flex-col text-center">$0.00</span>
+
                     </div>
 
                 </div>
@@ -492,12 +464,107 @@
     </div>
     <!-- Lower section -->
     <div class="items-center justify-around w-full border-t border-t-[rgb(221, 221, 221)] border-solid bg-[#129cb8]">
-        <div class="relative max-w-screen-xl hidden w-full lg:flex items-center gap-x-4 px-4 lg:px-[50px] mx-auto text-sm text-white">
+
+        <div
+            class="relative max-w-screen-xl lg:hidden w-full flex justify-between items-center gap-x-4 px-4 lg:px-[50px] mx-auto text-sm text-white">
+
+            <div class="h-[50px] pl-[30px] pt-[17px] relative pb-2.5 cursor-pointer" (click)="toggleBM()">
+                <svg class="icon icon-hamburger absolute top-[17px] left-0 fill-white w-[20px] h-[20px]"
+                    viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <title></title>
+                    <g data-name="menu " id="menu_">
+                        <path d="M29,6H3A1,1,0,0,0,3,8H29a1,1,0,0,0,0-2Z"></path>
+                        <path d="M3,17H16a1,1,0,0,0,0-2H3a1,1,0,0,0,0,2Z"></path>
+                        <path d="M25,24H3a1,1,0,0,0,0,2H25a1,1,0,0,0,0-2Z"></path>
+                    </g>
+                </svg>
+                <span class="h-full">
+                    {{ 'menu' | uppercase }}
+                </span>
+            </div>
+            <div class="flex justify-end relative gap-x-6">
+                <button (click)="dDCur()" class="flex items-center justify-center relative">
+                    <a class="flex items-center">USD $
+                        <svg aria-hidden="true" focusable="false" class="icon icon-caret duration-300 pl-1" height="7px"
+                            viewBox="0 0 10 6"
+                            [style.transform]="!ddcur? 'rotate(0deg) translateX(0px)' : 'rotate(180deg)  translateX(-4px)'">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                fill="currentColor">
+                            </path>
+                        </svg>
+                    </a>
+                    <div class="absolute -right-7 mt-[19px] rounded-md border bg-white text-black w-36 duration-200 origin-top overflow-hidden"
+                        [style.top]="!ddcur ? '100%' : '16px'" [style.opacity]="!ddcur ? '0' : '100'"
+                        [style.z-index]="!ddcur ? '-30' : '30'">
+                        <ul class="py-[5px] flex flex-col w-full ">
+                            <li>
+                                <a href="" class="currency-a">
+                                    CAD $
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    EUR €
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    USD $
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </button>
+
+
+                <button class="bg-[#89cedc] mt-0.5 w-[1px] h-4"></button>
+
+                <button (click)="dDLang()" class="flex items-center justify-center relative">
+                    <a class="flex items-center">English
+                        <svg aria-hidden="true" focusable="false" class="icon icon-caret pl-1 duration-300" height="7px"
+                            [style.transform]="!ddlang? 'rotate(0deg) translateX(0px)' : 'rotate(180deg)  translateX(-4px)'"
+                            viewBox="0 0 10 6">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                fill="currentColor">
+                            </path>
+                        </svg>
+                    </a>
+                    <div class="absolute right-0 mt-[19px] rounded-md border bg-white text-black w-36 duration-200 origin-top overflow-hidden"
+                        [style.top]="!ddlang ? '100%' : '16px'" [style.opacity]="!ddlang ? '0' : '100'"
+                        [style.z-index]="!ddlang ? '-30' : '30'">
+                        <ul class="py-[5px] flex flex-col w-full ">
+                            <li>
+                                <a href="" class="currency-a">
+                                    English
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    Français
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="currency-a">
+                                    Nederlands
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+
+        <div
+            class="relative max-w-screen-xl hidden w-full lg:flex items-center gap-x-4 px-4 lg:px-[50px] mx-auto text-sm text-white">
             <!-- Browse All Categories -->
             <nav class="h-full cursor-pointer relative brws-all-categories flex items-center w-[296px]">
 
                 <h3 class="font-[500] w-[280px] h-full flex relative gap-x-2.5">
-                    <svg class="icon icon-hamburger w-[19px] mr-[5px] fill-white" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="icon icon-hamburger w-[19px] mr-[5px] fill-white" viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg">
                         <title></title>
                         <g data-name="menu " id="menu_">
                             <path d="M29,6H3A1,1,0,0,0,3,8H29a1,1,0,0,0,0-2Z"></path>
@@ -508,7 +575,8 @@
 
                     {{ 'browse all category' | uppercase }}
 
-                    <svg aria-hidden="true" focusable="false" class="w-[12px] absolute right-5 top-1.5 icon icon-caret" viewBox="0 0 10 6">
+                    <svg aria-hidden="true" focusable="false" class="w-[12px] absolute right-5 top-1.5 icon icon-caret"
+                        viewBox="0 0 10 6">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
                             fill="currentColor">
@@ -605,17 +673,53 @@
                     <li class="li-hover relative py-[17px] px-[26px]">
                         <a href="#">Today's Deal</a>
                     </li>
-                    <li class="li-hover relative py-[17px] px-[26px]">
+                    <li class="li-hover hidden lgxl:block relative py-[17px] px-[26px]">
                         <a href="#">Summer Sale</a>
                     </li>
-                    <li class="li-hover relative py-[17px] px-[26px]">
+                    <li class="li-hover hidden lgxl:block relative py-[17px] px-[26px]">
                         <a href="#">Smart Mobiles</a>
                     </li>
-                    <li class="li-hover relative py-[17px] px-[26px]">
-                        <a href="#">Mobile Accessories</a>
+                    <li class="li-hover hidden lgxl:block relative py-[17px] px-[26px]">
+                        <a href="#">Contact</a>
                     </li>
-                    <li class="li-hover relative py-[17px] px-[26px]">
+                    <li class="li-hover hidden lgxl:block relative py-[17px] px-[26px]">
                         <a href="#">Blog</a>
+                    </li>
+                    <li class="block lgxl:hidden relative cursor-pointer drp-hover py-[17px] px-[26px]">
+                        <a class="li-hover flex">More
+                            <svg aria-hidden="true" focusable="false"
+                                class="absolute top-[25px] right-2.5 icon icon-caret w-2.5" viewBox="0 0 10 6">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                    fill="currentColor">
+                                </path>
+                            </svg>
+                        </a>
+                        <!-- Dropdown -->
+                        <ul class="dropdown-menu-more text-black">
+                            <li class="py-1">
+                                <a href="" class="h-6">
+                                    Summer Sale
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="" class="h-6">
+                                    Smart Mobiles
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="" class="h-6">
+                                    Contact
+                                </a>
+                            </li>
+                            <li class="py-1">
+                                <a href="" class="h-6">
+                                    Blog
+                                </a>
+                            </li>
+
+                        </ul>
+
                     </li>
                 </ul>
             </nav>
