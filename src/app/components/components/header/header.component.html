@@ -222,7 +222,8 @@
                 <button class="bg-[#89cedc] hidden sm:flex w-[1px] h-4"></button>
                 <button (click)="dDCur()" class="flex items-center justify-center relative">
                     <a class="flex items-center">USD $
-                        <svg aria-hidden="true" focusable="false" class="icon icon-caret pl-1" height="7px"
+                        <svg aria-hidden="true" focusable="false" class="duration-200 icon icon-caret pl-1" height="7px" 
+                        [style.transform]="!ddcur? 'rotate(0deg) translateX(0px)' : 'rotate(180deg)  translateX(-4px)'"
                             viewBox="0 0 10 6">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
@@ -255,8 +256,10 @@
                 <button class="bg-[#89cedc] w-[1px] h-4"></button>
                 <button (click)="dDLang()" class="flex items-center justify-center relative">
                     <a class="flex items-center">English
-                        <svg aria-hidden="true" focusable="false" class="icon icon-caret pl-1" height="7px"
-                            viewBox="0 0 10 6">
+                        <svg 
+                        aria-hidden="true" focusable="false" class="duration-200 icon icon-caret pl-1" height="7px"
+                        [style.transform]="!ddlang? 'rotate(0deg) translateX(0px)' : 'rotate(180deg)  translateX(-4px)'"
+                        viewBox="0 0 10 6">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
                                 fill="currentColor">
@@ -305,7 +308,7 @@
                 </div>
                 <div class="hidden md:flex w-2/4 pl-[30px] pr-[10px] h-[45px] items-center">
                     <input type="search" placeholder="Search..."
-                        class="w-full outline-none placeholder:text-sm pl-5 pr-[15px] py-[5px] border-solid border-2 rounded-l-md border-[#129cb8] h-full">
+                        class="w-full outline-none placeholder:text-sm p-2.5 border-solid border-2 rounded-l-md border-[#129cb8] h-full">
                     <button class="xl:mr- bg-[#129cb8] flex rounded-r-md justify-center items-center h-full w-[50px]">
                         <span class="w-[60px] h-[30px]">
                             <svg id="Layer_1" class="fill-white w-5 mt-1 mx-5 h-5 icon icon-header-search"
@@ -489,105 +492,134 @@
     </div>
     <!-- Lower section -->
     <div class="items-center justify-around w-full border-t border-t-[rgb(221, 221, 221)] border-solid bg-[#129cb8]">
-        <div class="max-w-screen-xl hidden w-full lg:flex items-center  px-4 lg:px-[50px] mx-auto text-sm text-white">
+        <div class="relative max-w-screen-xl hidden w-full lg:flex items-center gap-x-4 px-4 lg:px-[50px] mx-auto text-sm text-white">
             <!-- Browse All Categories -->
-            <div class="">
+            <nav class="h-full cursor-pointer relative brws-all-categories flex items-center w-[296px]">
 
-            </div>
+                <h3 class="font-[500] w-[280px] h-full flex relative gap-x-2.5">
+                    <svg class="icon icon-hamburger w-[19px] mr-[5px] fill-white" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <title></title>
+                        <g data-name="menu " id="menu_">
+                            <path d="M29,6H3A1,1,0,0,0,3,8H29a1,1,0,0,0,0-2Z"></path>
+                            <path d="M3,17H16a1,1,0,0,0,0-2H3a1,1,0,0,0,0,2Z"></path>
+                            <path d="M25,24H3a1,1,0,0,0,0,2H25a1,1,0,0,0,0-2Z"></path>
+                        </g>
+                    </svg>
+
+                    {{ 'browse all category' | uppercase }}
+
+                    <svg aria-hidden="true" focusable="false" class="w-[12px] absolute right-5 top-1.5 icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                            fill="currentColor">
+                        </path>
+                    </svg>
+                </h3>
+            </nav>
 
 
-            <ul class="flex justify-start font-semibold text-white items-center">
-                <li class="li-active-hover relative py-[17px] px-[26px]">
-                    <a href="#" class="active-page">Home</a>
-                </li>
-                <li class="relative cursor-pointer drp-hover py-[17px] px-[26px]">
-                    <a class="li-hover flex">Electronics
-                        <svg aria-hidden="true" focusable="false"
-                            class="absolute top-[25px] right-2.5 icon icon-caret w-2.5" viewBox="0 0 10 6">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
-                                fill="currentColor">
-                            </path>
-                        </svg>
-                    </a>
-                    <!-- Dropdown -->
-                    <ul class="dropdown-menu text-black">
-                        <!-- Box 1 -->
-                        <li class="w-1/4 mr-[15px]">
-                            <summary class="duration-100 drp-link-title">
-                                <a href="" class="h-[34px]">
-                                    Headphone
-                                </a>
-                            </summary>
-                            <ul class="flex flex-col gap-y-3.5">
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Speaker</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Laptop</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Headphone</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Tablet</a></li>
-                            </ul>
-                        </li>
-                        <!-- Box 2 -->
-                        <li class="w-1/4 mr-[15px]">
-                            <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
-                                <a href="" class="h-[34px]">
-                                    Computer & Laptop
-                                </a>
-                            </summary>
-                            <ul class="flex flex-col gap-y-3.5">
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Camera</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Android Tv</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Mobile</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Watch</a></li>
-                            </ul>
-                        </li>
-                        <!-- Box 3 -->
-                        <li class="w-1/4 mr-[15px]">
-                            <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
-                                <a href="" class="h-[34px]">
-                                    Mobile & Tablet
-                                </a>
-                            </summary>
-                            <ul class="flex flex-col gap-y-3.5">
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Home Theater</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Cell Phones</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Smart TV</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Air Purifier</a></li>
-                            </ul>
-                        </li>
-                        <!-- Box 4-->
-                        <li class="w-1/4 mr-[15px]">
-                            <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
-                                <a href="" class="h-[34px]">
-                                    Mobile & Tablet
-                                </a>
-                            </summary>
-                            <ul class="flex flex-col gap-y-3.5">
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Home Theater</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Cell Phones</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Smart TV</a></li>
-                                <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Air Purifier</a></li>
-                            </ul>
-                        </li>
+            <nav>
+                <ul class="flex text-[15px] justify-start font-[500] text-white items-center">
+                    <li class="li-active-hover relative py-[17px] px-[26px]">
+                        <a href="#" class="active-page">Home</a>
+                    </li>
+                    <li class="relative cursor-pointer drp-hover py-[17px] px-[26px]">
+                        <a class="li-hover flex">Electronics
+                            <svg aria-hidden="true" focusable="false"
+                                class="absolute top-[25px] right-2.5 icon icon-caret w-2.5" viewBox="0 0 10 6">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                    fill="currentColor">
+                                </path>
+                            </svg>
+                        </a>
+                        <!-- Dropdown -->
+                        <ul class="dropdown-menu text-black">
+                            <!-- Box 1 -->
+                            <li class="w-1/4 mr-[15px]">
+                                <summary class="duration-100 drp-link-title">
+                                    <a href="" class="h-[34px]">
+                                        Headphone
+                                    </a>
+                                </summary>
+                                <ul class="flex flex-col gap-y-3.5">
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Speaker</a></li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Laptop</a></li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Headphone</a></li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Tablet</a></li>
+                                </ul>
+                            </li>
+                            <!-- Box 2 -->
+                            <li class="w-1/4 mr-[15px]">
+                                <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
+                                    <a href="" class="h-[34px]">
+                                        Computer & Laptop
+                                    </a>
+                                </summary>
+                                <ul class="flex flex-col gap-y-3.5">
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Camera</a></li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Android Tv</a>
+                                    </li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Mobile</a></li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Watch</a></li>
+                                </ul>
+                            </li>
+                            <!-- Box 3 -->
+                            <li class="w-1/4 mr-[15px]">
+                                <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
+                                    <a href="" class="h-[34px]">
+                                        Mobile & Tablet
+                                    </a>
+                                </summary>
+                                <ul class="flex flex-col gap-y-3.5">
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Home Theater</a>
+                                    </li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Cell Phones</a>
+                                    </li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Smart TV</a></li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Air Purifier</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Box 4-->
+                            <li class="w-1/4 mr-[15px]">
+                                <summary class="hover:text-[#129cb8] duration-100 drp-link-title">
+                                    <a href="" class="h-[34px]">
+                                        Mobile & Tablet
+                                    </a>
+                                </summary>
+                                <ul class="flex flex-col gap-y-3.5">
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Home Theater</a>
+                                    </li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Cell Phones</a>
+                                    </li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Smart TV</a></li>
+                                    <li class="hover:text-[#129cb8] duration-100 drp-link"><a href="">Air Purifier</a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                    </ul>
+                        </ul>
 
-                </li>
-                <li class="li-hover relative py-[17px] px-[26px]">
-                    <a href="#">Today's Deal</a>
-                </li>
-                <li class="li-hover relative py-[17px] px-[26px]">
-                    <a href="#">Summer Sale</a>
-                </li>
-                <li class="li-hover relative py-[17px] px-[26px]">
-                    <a href="#">Smart Mobiles</a>
-                </li>
-                <li class="li-hover relative py-[17px] px-[26px]">
-                    <a href="#">Mobile Accessories</a>
-                </li>
-                <li class="li-hover relative py-[17px] px-[26px]">
-                    <a href="#">Blog</a>
-                </li>
-            </ul>
+                    </li>
+                    <li class="li-hover relative py-[17px] px-[26px]">
+                        <a href="#">Today's Deal</a>
+                    </li>
+                    <li class="li-hover relative py-[17px] px-[26px]">
+                        <a href="#">Summer Sale</a>
+                    </li>
+                    <li class="li-hover relative py-[17px] px-[26px]">
+                        <a href="#">Smart Mobiles</a>
+                    </li>
+                    <li class="li-hover relative py-[17px] px-[26px]">
+                        <a href="#">Mobile Accessories</a>
+                    </li>
+                    <li class="li-hover relative py-[17px] px-[26px]">
+                        <a href="#">Blog</a>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
     </div>
 </header>

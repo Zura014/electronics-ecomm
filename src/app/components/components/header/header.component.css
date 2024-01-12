@@ -57,31 +57,30 @@
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
     var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
     var(--tw-sepia) var(--tw-drop-shadow);
-  border-width: 1px ;
+  border-width: 1px;
   font-weight: normal;
   padding: 15px 30px;
   background-color: white;
   transition: all 0.5s ease;
 }
 
-@media (max-width: 1280px){
-  
- .dropdown-menu {
-      width: 750px;
-    }
+@media (max-width: 1280px) {
+  .dropdown-menu {
+    width: 750px;
+  }
 }
 
 .drp-hover:hover .dropdown-menu {
-  opacity: 100% ;
+  opacity: 100%;
   top: 100%;
   z-index: 50;
   transition: all 0.5s ease;
 }
 
 .drp-link-title {
-  display: flex; 
-  justify-content: start; 
-  align-items:center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
   /* height: 44px; */
   font-size: 15px;
   font-weight: 600;
@@ -104,17 +103,27 @@
   font-size: 15px;
 }
 
-.currency-a{
+.currency-a {
   padding: 2px 20px;
   width: 100%;
   float: left;
   text-align: left;
   color: #333;
   font-size: 14px;
-  letter-spacing: 0.4px ;
+  letter-spacing: 0.4px;
   line-height: 25.2px;
 }
 
-.currency-a:hover{
+.currency-a:hover {
   color: #129cb8;
+}
+
+.brws-all-categories::after {
+  content: "";
+  width: 1px;
+  height: 20px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
