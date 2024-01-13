@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Offer } from '../../../interfaces/offer.interface';
 
 @Component({
   selector: 'app-header',
@@ -12,41 +13,135 @@ export class HeaderComponent {
   bmeh: boolean = false;
   bmec: boolean = false;
   bmem: boolean = false;
+  bmes: boolean = false;
   ddcur: boolean = false;
   ddlang: boolean = false;
-  
+  clickedBAC: boolean = false;
+  cpfp: boolean = false;
+
+  toggleBac(){
+    this.clickedBAC =!this.clickedBAC;
+  }
+
+  offers: Offer[] = [
+    {
+      title: 'electronics',
+      subcategories: [
+        'android tv',
+        'apple ipad',
+        'android tablet',
+        'cell phones',
+        'wireless printer',
+        'air purifier',
+        'apple ipad',
+        'earbuds bose',
+        'cell phones',
+        'control speakers',
+        'smart mobiles',
+        'electronics'
+      ],
+      href: '',
+    },
+    {
+      title: "today's deal",
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+    {
+      title: 'summer sale',
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+    {
+      title: 'smart mobiles',
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+    {
+      title: 'mobile accessories',
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+    {
+      title: 'computer accessories',
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+    {
+      title: 'smart phone',
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+    {
+      title: 'control speakers',
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+    {
+      title: 'android tv',
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+    {
+      title: 'game controller',
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+    {
+      title: 'smart watch',
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+    {
+      title: 'air purifier',
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+    {
+      title: 'computer & laptop',
+      subcategories: [
+        
+      ],
+      href: '',
+    },
+  ];
+
   dDCur(): void {
-    if(this.ddlang){
+    if (this.ddlang) {
       this.ddcur = true;
       this.ddlang = false;
-    } else{
-      this.ddcur =!this.ddcur;
+    } else {
+      this.ddcur = !this.ddcur;
     }
   }
-  dDLang(): void{
-    if(this.ddcur){
-      this.ddlang = true
+  dDLang(): void {
+    if (this.ddcur) {
+      this.ddlang = true;
       this.ddcur = false;
-    }else{
+    } else {
       this.ddlang = !this.ddlang;
     }
-  }
-  toggleBmem(): void { 
-    this.bmem = !this.bmem;
-  }
-  toggleBmec(): void { 
-    this.bmec = !this.bmec;
-  }
-  toggleBmeh(): void { 
-    this.bmeh = !this.bmeh;
-  }
-  toggleBme(): void { 
-    this.bme = !this.bme;
-  }
-  toggleSearch(){
-    this.isClickedSearch = !this.isClickedSearch;
-  }
-  toggleBM(){
-    this.isClickedBM =!this.isClickedBM;
   }
 }

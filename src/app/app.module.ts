@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
 import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 import { SlidesComponent } from './components/components/slides/slides.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     PageNotFoundComponent,
     SlidesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, NgOptimizedImage, NoopAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, NgOptimizedImage, BrowserAnimationsModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
