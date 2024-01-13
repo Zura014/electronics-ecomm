@@ -18,8 +18,8 @@ export class HeaderComponent {
   ddlang: boolean = false;
   clickedBAC: boolean = false;
   cpfp: boolean = false;
-
-  toggleBac(){
+  
+  toggleBac(): void{
     this.clickedBAC =!this.clickedBAC;
   }
 

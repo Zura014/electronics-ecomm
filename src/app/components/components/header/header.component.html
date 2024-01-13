@@ -304,31 +304,37 @@
     <!-- Mid section -->
     <div class="relative bg-white">
 
-        <div class="pt-[15px] pb-[73px] md:py-[15px] px-[17px] lg:py-[30px] lg:px-[50px] mx-auto lg:max-w-screen-xl relative">
+        <div
+            class="pt-[15px] pb-[73px] md:py-[15px] px-[17px] lg:py-[30px] lg:px-[50px] mx-auto lg:max-w-screen-xl relative">
 
 
 
 
             <!-- Search Bar -->
             <div
-            class="flex md:hidden w-full absolute top-[60px] left-1/2 -translate-x-1/2 px-2.5 lgxl:pl-[70px] lgxl:pr-[30px] h-[45px] items-center">
-            <input type="search" placeholder="Search..."
-                class="w-full outline-none placeholder:text-sm p-2.5 border-solid border-2 rounded-l-md border-[#129cb8] h-full">
-            <button class="xl:mr- bg-[#129cb8] flex rounded-r-md justify-center items-center h-full w-[50px]">
-                <span class="w-[60px] h-[30px]">
-                    <svg id="Layer_1"
-                        class="hover:fill-[#129cb8] duration-300 hover:duration-300 fill-white w-5 mt-1 mx-5 h-5 icon icon-header-search"
-                        data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.04 981.7">
-                        <g id="_3_3" data-name="3_3">
-                            <path
-                                d="M979.3,928.4,718.5,667.2a399.9,399.9,0,0,0,92.8-256.7C811.3,188.9,631.9,9.2,410.7,9.2S10,188.9,10,410.5,189.4,811.8,410.7,811.8A398.56,398.56,0,0,0,667,718.9L927.8,980.2a36.52,36.52,0,1,0,51.5-51.8ZM410.7,738.7C230,738.7,83,591.4,83,410.5S230,82.3,410.7,82.3,738.4,229.5,738.4,410.5,591.3,738.7,410.7,738.7Z"
-                                transform="translate(-10 -9.2)"></path>
-                        </g>
-                    
-                    </svg>
-                </span>
-            </button>
-        </div>
+                class="flex md:hidden w-full absolute top-[60px] left-1/2 -translate-x-1/2 px-2.5 lgxl:pl-[70px] lgxl:pr-[30px] h-[45px] items-center">
+                <!-- <mat-form-field class="w-full border example-full-width">
+                    <mat-label class="">Search</mat-label>
+                    <input matInput class="border-none" type="search" placeholder="Search">
+                </mat-form-field> -->
+                <input type="search" placeholder="Search..."
+                    class="w-full outline-none placeholder:text-sm p-2.5 border-solid border-2 rounded-l-md border-[#129cb8] h-full">
+
+                <button class="xl:mr- bg-[#129cb8] flex rounded-r-md justify-center items-center h-full w-[50px]">
+                    <span class="w-[60px] h-[30px]">
+                        <svg id="Layer_1"
+                            class="hover:fill-[#129cb8] duration-300 hover:duration-300 fill-white w-5 mt-1 mx-5 h-5 icon icon-header-search"
+                            data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.04 981.7">
+                            <g id="_3_3" data-name="3_3">
+                                <path
+                                    d="M979.3,928.4,718.5,667.2a399.9,399.9,0,0,0,92.8-256.7C811.3,188.9,631.9,9.2,410.7,9.2S10,188.9,10,410.5,189.4,811.8,410.7,811.8A398.56,398.56,0,0,0,667,718.9L927.8,980.2a36.52,36.52,0,1,0,51.5-51.8ZM410.7,738.7C230,738.7,83,591.4,83,410.5S230,82.3,410.7,82.3,738.4,229.5,738.4,410.5,591.3,738.7,410.7,738.7Z"
+                                    transform="translate(-10 -9.2)"></path>
+                            </g>
+
+                        </svg>
+                    </span>
+                </button>
+            </div>
 
 
 
@@ -396,11 +402,9 @@
                                 </path>
                             </svg>
 
-                            <div 
-                                class="w-[150px] flex sm:hidden flex-col z-30 text-sm font-[400] py-2.5 px-[15px] absolute right-0 top-[calc(100%+15px)] origin-top overflow-hidden duration-300 border bg-white"
-                                [style.opacity]="!cpfp ? '0%' : '100%'"
-                                [style.height]="!cpfp ? '0' : '122px'"
-                                >
+                            <div class="w-[150px] flex sm:hidden flex-col text-sm font-[400] py-2.5 px-[15px] absolute right-0 top-[calc(100%+15px)] origin-top overflow-hidden duration-300 border bg-white"
+                                [style.opacity]="!cpfp ? '0%' : '100%'" [style.height]="!cpfp ? '0' : '122px'"
+                                [style.z-index]="!cpfp ? '-30' : '30'">
                                 <a href="" class="py-0.5 h-[25px] burger-arrow">Login</a>
                                 <a href="" class="py-0.5 h-[25px] burger-arrow">Register</a>
                                 <a href="" class="py-0.5 h-[25px] burger-arrow">Wishlist ({{ '0' }})</a>
