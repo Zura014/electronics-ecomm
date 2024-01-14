@@ -313,14 +313,18 @@
             <!-- Search Bar -->
             <div
                 class="flex md:hidden w-full absolute top-[60px] left-1/2 -translate-x-1/2 px-2.5 lgxl:pl-[70px] lgxl:pr-[30px] h-[45px] items-center">
-                <!-- <mat-form-field class="w-full border example-full-width">
-                    <mat-label class="">Search</mat-label>
-                    <input matInput class="border-none" type="search" placeholder="Search">
-                </mat-form-field> -->
-                <input type="search" placeholder="Search..."
-                    class="w-full outline-none placeholder:text-sm p-2.5 border-solid border-2 rounded-l-md border-[#129cb8] h-full">
+                
+                <div class="input-group h-full w-full">
+                    <input 
+                        id="searchBar"    
+                        type="search"
+                        class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 border-solid border-2 rounded-l-md border-[#129cb8] h-full"
+                        placeholder="s"
+                        >
+                        <label for="searchBar" class="search-label">Search</label>       
+                </div>
 
-                <button class="xl:mr- bg-[#129cb8] flex rounded-r-md justify-center items-center h-full w-[50px]">
+                <button class="bg-[#129cb8] relative right-0 flex rounded-r-md justify-center items-center h-full w-[50px]">
                     <span class="w-[60px] h-[30px]">
                         <svg id="Layer_1"
                             class="hover:fill-[#129cb8] duration-300 hover:duration-300 fill-white w-5 mt-1 mx-5 h-5 icon icon-header-search"
@@ -349,12 +353,21 @@
                 </div>
                 <div
                     class="hidden md:flex w-2/4 pl-[30px] pr-[10px] lgxl:pl-[70px] lgxl:pr-[30px] h-[45px] items-center">
-                    <input type="search" placeholder="Search..."
-                        class="w-full outline-none placeholder:text-sm p-2.5 border-solid border-2 rounded-l-md border-[#129cb8] h-full">
+                    
+                    <div class="input-group">
+                        <input 
+                            id="searchBar"    
+                            type="search"
+                            class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 border-solid border-2 rounded-l-md border-[#129cb8] h-full"
+                            placeholder="s"
+                            >
+                        <label for="searchBar" class="search-label">Search</label>
+                    </div>
+
                     <button class="xl:mr- bg-[#129cb8] flex rounded-r-md justify-center items-center h-full w-[50px]">
                         <span class="w-[60px] h-[30px]">
                             <svg id="Layer_1"
-                                class="hover:fill-[#129cb8] duration-300 hover:duration-300 fill-white w-5 mt-1 mx-5 h-5 icon icon-header-search"
+                                class="duration-300 hover:duration-300 fill-white w-5 mt-1 mx-5 h-5 icon icon-header-search"
                                 data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.04 981.7">
                                 <g id="_3_3" data-name="3_3">
                                     <path
