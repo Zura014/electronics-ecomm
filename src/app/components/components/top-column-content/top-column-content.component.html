@@ -1,24 +1,24 @@
 <div class="w-full bg-[#d9e5e7] py-8 mb-[30px]">
-    <div class="px-[50px] w-full">
-        <div class="flex items-center justify-between w-full">
+    <div class="px-[17px] lg:px-[50px] w-full">
+        <div class="flex flex-col lg:flex-row items-center justify-between w-full">
             <h1 class="text-[22px] font-medium">
                 {{ topColContent.title }}
             </h1>
             <nav class="text-[#777777]">
-                    @if (topColContent.location[0] === '') {
-                    <a href="/home" class="px-[3px]">
-                        Home
-                    </a>
-                    }@else {
+                @if (topColContent.location[0] === '') {
+                <a href="/home" class="px-[3px]">
+                    Home
+                </a>
+                }@else {
 
-                    <a href="/home" class="after:content-['/'] px-[3px]">
-                        Home
-                    </a>
-                    @for( loc of topColContent.location; track loc ){
-                    <a [href]="topColContent.pageHREF" class="after:content-['/'] px-[3px]">
-                        {{ loc }}
-                    </a>
-                    }
+                <a href="/home" class="after:content-['/'] px-[3px]">
+                    Home
+                </a>
+                @for( loc of topColContent.location; track loc ){
+                <a [href]="topColContent.pageHREF" class="after:content-['/'] px-[3px]">
+                    {{ loc }}
+                </a>
+                }
                 }
             </nav>
         </div>

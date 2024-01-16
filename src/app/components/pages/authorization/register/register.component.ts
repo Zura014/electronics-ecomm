@@ -11,7 +11,7 @@ export class RegisterComponent {
   topColContent: TopCol = {
     title: 'Create Account',
     pageHREF: 'home',
-    location: ['']
+    location: ['a', 'a', 'b', 'c', 'd', 'e', 's']
   };
 
 }
