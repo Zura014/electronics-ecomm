@@ -32,7 +32,16 @@ import { TopColumnContentComponent } from './components/components/top-column-co
     SlidesComponent,
     TopColumnContentComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule, NgOptimizedImage, BrowserAnimationsModule, MatInputModule, MatFormFieldModule],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    FormsModule,
+    NgOptimizedImage,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+  ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })

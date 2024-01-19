@@ -1,9 +1,9 @@
 .hamburger:hover .icon-hamburger {
-  fill: #129cb8;
+  fill: var(--default-color);
   transition: all 0.5s ease 0s;
 }
 .icons-div:hover .svg-icon {
-  fill: #129cb8;
+  fill: var(--default-color);
 }
 
 .active-page {
@@ -88,12 +88,12 @@
   font-size: 15px;
   font-weight: 600;
   position: relative;
-  color: #129cb8;
+  color: var(--default-color);
 }
 
 .burger-arrow:hover{
 
-  color: #129cb8;
+  color: var(--default-color);
   
 
 }
@@ -114,7 +114,7 @@
 }
 
 .currency-a:hover {
-  color: #129cb8;
+  color: var(--default-color);
 }
 
 .brws-all-categories::after {
@@ -215,7 +215,7 @@
   line-height: 25.2px;
 }
 .currency-a-M:hover{
-  color:#129cb8;
+  color:var(--default-color);
 }
 
 .input-group{

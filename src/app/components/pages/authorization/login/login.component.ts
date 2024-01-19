@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TopCol } from '../../../../interfaces/topcol.interface';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +9,17 @@ import { TopCol } from '../../../../interfaces/topcol.interface';
 })
 export class LoginComponent {
   
-  
   topColContent: TopCol = {
     title: 'Account',
     pageHREF: 'home',
-    location: ['a', 'a', 'b', 'c', 'd', 'e', 's']
+    location: ['']
   };
+  myForm!: FormGroup;
+
+
+  constructor() {
+  }
+  onSubmit(): void{
+    console.log(this.myForm.value);
+  }
 }

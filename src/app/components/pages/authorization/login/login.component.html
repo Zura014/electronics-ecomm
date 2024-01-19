@@ -1,5 +1,44 @@
 <top-column-content [topColContent]="topColContent"></top-column-content>
 
-<div class="h-screen">
+<div class="w-full relative">
+
+    <div class="mx-auto mt-[60px] py-9 px-[45px] border rounded-md w-10/12 lg:w-[588px]">
+
+        <h2 class="text-[22px] font-medium w-full text-center my-[18.26px]" style="line-height:28.6px">
+            Log in to your account
+        </h2>
+
+        <form [formGroup]="myForm" class="relative" (ngSubmit)="onSubmit()">
+            <div class="input-group mt-5">
+                <input id="formInput" type="email"
+                    class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
+                    placeholder="s">
+                <label for="formInput" class="search-label">Email</label>
+            </div>
+            <div class="input-group mt-5">
+                <input id="formInput" type="password"
+                    class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
+                    placeholder="s">
+                <label for="formInput" class="search-label">Password</label>
+            </div>
+            <a href="#recover"
+                class="mt-2.5 text-[rgb(51, 51, 51)] text-center hover:no-underline hover:text-[#129cb8] text-sm underline underline-offset-[3px] inline-block">
+                Forgot your password?
+            </a>
+            <button
+                class="btn-bef z-[1] overflow-hidden relative flex items-center justify-center w-full text-sm font-medium text-white px-[27px] mt-10 mb-[15px] h-[45px] rounded-md"
+                style="background-color: var(--default-color);">
+                SIGN IN
+            </button>
+            <a  href=""
+                routerLink="/register"
+                class="w-full text-[rgb(51, 51, 51)] text-center hover:no-underline hover:text-[#129cb8] text-sm underline underline-offset-[3px] inline-block"
+                style="line-height: 25.2px;">
+
+                No account yet? Create an account
+
+            </a>
+        </form>
+    </div>
 
 </div>
