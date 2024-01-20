@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TopCol } from '../../../../interfaces/topcol.interface';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { AuthService } from '../../../../services/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,17 +10,36 @@ import { Validators } from '@angular/forms';
 })
 export class RegisterComponent {
   
+  email: string = '';
+  password: string = '';
+
   topColContent: TopCol = {
     title: 'Create Account',
     pageHREF: 'home',
     location: ['']
   };
-  myForm!: FormGroup;
+
+  myForm: FormGroup = new FormGroup({
+    firstName: new FormControl(),
+    lastName: new FormControl(),
+    email: new FormControl(),
+    password: new FormControl(),
+  });
 
 
-  constructor() {
-  }
-  onSubmit(): void{
-    console.log(this.myForm.value);
+  constructor(private authservice: AuthService) {
+  }  
+  signUp(): void{
+    const user = {
+      email: this.email,
+      password: this.password
+    }
+
+    this.authservice
+    .signUp(user)
+    .subscribe((user) => 
+      this.authservice.signUp(user)
+    )
+
   }
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, importProvidersFrom } from '@angular/core';
 import {
   BrowserModule,
   provideClientHydration,
@@ -19,6 +19,9 @@ import { PageNotFoundComponent } from './components/pages/page-not-found/page-no
 import { SlidesComponent } from './components/components/slides/slides.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopColumnContentComponent } from './components/components/top-column-content/top-column-content.component';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -41,8 +44,14 @@ import { TopColumnContentComponent } from './components/components/top-column-co
     BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,
+    HttpClientModule
   ],
-  providers: [provideClientHydration()],
+  providers: [
+    provideClientHydration(), 
+    importProvidersFrom(HttpClientModule),
+    // provideHttpClient(withFetch()), 
+    AuthService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
