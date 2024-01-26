@@ -8,7 +8,8 @@ import { FormGroup } from '@angular/forms';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  
+  forgotPass: boolean = false;
+
   topColContent: TopCol = {
     title: 'Account',
     pageHREF: 'home',
