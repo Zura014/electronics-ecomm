@@ -46,3 +46,12 @@
   width: 100%;
   transition: all 0.4s ease-in-out;
 }
+
+.invalid-data{ 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  color: rgb(119, 119, 119);
+  margin-top: 10px;
+}

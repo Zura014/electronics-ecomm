@@ -8,66 +8,200 @@
             Create Account
         </h2>
 
-            <form (ngSubmit)="signUp()" [formGroup]="myForm" class="relative">
-                <div class="input-group">
-                    <input 
-                        id="formInputFN"    
-                        type="text"
-                        formControlName="firstName"
-                        class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
-                        placeholder="s"
-                        >
-                    <label for="formInput" class="search-label">First name</label>
+        <form 
+            (ngSubmit)="signUp()" 
+            [formGroup]="myForm" 
+            class="relative"
+            >
+            <div class="input-group">
+                <input id="formInputFN" type="text" formControlName="firstName"
+                    class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
+                    placeholder="s">
+                <label for="formInput" class="search-label">First name</label>
+            </div>
+            <div class="invalid-data" *ngIf="
+                    myForm.controls.firstName.invalid && 
+                    myForm.controls.firstName.touched &&
+                    myForm.controls.firstName.errors
+                ">
+                <div class="flex items-center" *ngIf="myForm.controls.firstName.errors['required']">
+                    <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                        viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    First Name is required
                 </div>
-                <div class="input-group mt-5">
-                    <input 
-                        id="formInputLN"    
-                        type="text"
-                        formControlName="lastName"
-                        class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
-                        placeholder="s"
-                        >
-                    <label for="formInput" class="search-label">Last name</label>
+                <div class="flex items-center" *ngIf="myForm.controls.firstName.errors['minlength'] || myForm.controls.firstName.errors['maxlength']">
+                    <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                        viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    First Name is invalid
                 </div>
-                <div class="input-group mt-5">
-                    <input 
-                        id="formInputE"    
-                        type="email"
-                        class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
-                        placeholder="s"
-                        formControlName="email"
-                        name="email"
-                        [(ngModel)]="email"
-                        >
-                    <label for="formInput" class="search-label">Email</label>
+            </div>
+            <div class="input-group mt-5">
+                <input id="formInputLN" type="text" formControlName="lastName"
+                    class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
+                    placeholder="s">
+                <label for="formInput" class="search-label">Last name</label>
+            </div>
+            <div class="invalid-data" *ngIf="
+                    myForm.controls.lastName.invalid && 
+                    myForm.controls.lastName.touched &&
+                    myForm.controls.lastName.errors
+                ">
+                <div class="flex items-center" *ngIf="myForm.controls.lastName.errors['required']">
+                    <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                        viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    Last Name is required
                 </div>
-                <div class="input-group mt-5">
-                    <input 
-                        id="formInputP"    
-                        type="password"
-                        class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
-                        placeholder="s"
-                        formControlName="password"
-                        name="password"
-                        [(ngModel)]="password"
-                        >
-                    <label for="formInput" class="search-label">Password</label>
+                <div class="flex items-center" *ngIf="myForm.controls.lastName.errors['minlength'] || myForm.controls.lastName.errors['maxlength']">
+                    <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                        viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    Last Name is invalid
                 </div>
-                <button 
-                    class="btn-bef z-[1] relative overflow-hidden flex items-center justify-center w-full text-sm font-medium text-white px-[27px] mt-10 mb-[15px] h-[45px] rounded-md" 
-                    style="background-color: var(--default-color);"
-                    type="submit"
-                    >
-                    CREATE
-                </button>
-                <a 
-                    href="home" 
-                    class="w-full text-[rgb(51, 51, 51)] text-center hover:no-underline hover:text-[#129cb8] text-sm underline underline-offset-[3px] inline-block" 
-                    style="line-height: 25.2px;"
-                    >
-                    Return to store
-                </a>
-            </form>
+            </div>
+            <div class="input-group mt-5">
+                <input id="formInputE" type="email"
+                    class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
+                    placeholder="s" formControlName="email" name="email">
+                <label for="formInput" class="search-label">Email</label>
+            </div>
+            <div class="invalid-data" *ngIf="
+                    myForm.controls.email.invalid &&
+                    myForm.controls.email.touched &&
+                    myForm.controls.email.errors
+                 ">
+
+                <div class="flex items-center" *ngIf="myForm.controls.email.errors['required']">
+                    <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                        viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    Email is required
+                </div>
+                <div class="flex items-center" *ngIf="myForm.controls.email.errors['email']">
+                    <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                        viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    Enter a valid email address
+                </div>
+            </div>
+            <div class="input-group mt-5">
+                <input id="formInputP" type="password"
+                    class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
+                    placeholder="s" formControlName="password" name="password">
+                <label for="formInput" class="search-label">Password</label>
+            </div>
+            <div class="invalid-data" *ngIf="
+                    myForm.controls.password.invalid &&
+                    myForm.controls.password.touched &&
+                    myForm.controls.password.errors
+                 ">
+
+                <div class="flex items-center" *ngIf="myForm.controls.password.errors['required']">
+                    <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                        viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    Password is required
+                </div>
+                <div class="flex items-center" *ngIf="(myForm.controls.password.errors['password'] && myForm.controls.password.errors['minlength']) || myForm.controls.password.errors['maxlength']  ">
+                    <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                        viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    Your password must contain at least 8 characters <br> (1 upper case, numeric, and special character. For example: Pass!234)
+                </div>
+            </div>
+            <button
+                class="btn-bef z-[1] relative overflow-hidden flex items-center justify-center w-full text-sm font-medium text-white px-[27px] mt-10 mb-[15px] h-[45px] rounded-md"
+                style="background-color: var(--default-color);" type="submit" [disabled]="!myForm.valid">
+                CREATE
+            </button>
+            <a href="home"
+                class="w-full text-[rgb(51, 51, 51)] text-center hover:no-underline hover:text-[#129cb8] text-sm underline underline-offset-[3px] inline-block"
+                style="line-height: 25.2px;">
+                Return to store
+            </a>
+        </form>
     </div>
 
 </div>
