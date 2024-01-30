@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopColumnContentComponent } from './components/components/top-column-content/top-column-content.component';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
+import { provideServerRendering } from '@angular/platform-server';
 
 
 @NgModule({
@@ -48,8 +49,9 @@ import { AuthService } from './services/auth.service';
   ],
   providers: [
     provideClientHydration(), 
+    provideServerRendering(), 
     importProvidersFrom(HttpClientModule),
-    // provideHttpClient(withFetch()), 
+    provideHttpClient(withFetch()),
     AuthService
   ],
   bootstrap: [AppComponent],

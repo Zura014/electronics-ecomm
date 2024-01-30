@@ -10,7 +10,7 @@
 
         <form 
             (ngSubmit)="signUp()" 
-            [formGroup]="myForm" 
+            [formGroup]="registerForm" 
             class="relative"
             >
             <div class="input-group">
@@ -20,11 +20,11 @@
                 <label for="formInput" class="search-label">First name</label>
             </div>
             <div class="invalid-data" *ngIf="
-                    myForm.controls.firstName.invalid && 
-                    myForm.controls.firstName.touched &&
-                    myForm.controls.firstName.errors
+                    registerForm.controls.firstName.invalid && 
+                    registerForm.controls.firstName.touched &&
+                    registerForm.controls.firstName.errors
                 ">
-                <div class="flex items-center" *ngIf="myForm.controls.firstName.errors['required']">
+                <div class="flex items-center" *ngIf="registerForm.controls.firstName.errors['required']">
                     <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
                         viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -40,7 +40,7 @@
                     </svg>
                     First Name is required
                 </div>
-                <div class="flex items-center" *ngIf="myForm.controls.firstName.errors['minlength'] || myForm.controls.firstName.errors['maxlength']">
+                <div class="flex items-center" *ngIf="registerForm.controls.firstName.errors['minlength'] || registerForm.controls.firstName.errors['maxlength']">
                     <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
                         viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -64,11 +64,11 @@
                 <label for="formInput" class="search-label">Last name</label>
             </div>
             <div class="invalid-data" *ngIf="
-                    myForm.controls.lastName.invalid && 
-                    myForm.controls.lastName.touched &&
-                    myForm.controls.lastName.errors
+                    registerForm.controls.lastName.invalid && 
+                    registerForm.controls.lastName.touched &&
+                    registerForm.controls.lastName.errors
                 ">
-                <div class="flex items-center" *ngIf="myForm.controls.lastName.errors['required']">
+                <div class="flex items-center" *ngIf="registerForm.controls.lastName.errors['required']">
                     <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
                         viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -84,7 +84,7 @@
                     </svg>
                     Last Name is required
                 </div>
-                <div class="flex items-center" *ngIf="myForm.controls.lastName.errors['minlength'] || myForm.controls.lastName.errors['maxlength']">
+                <div class="flex items-center" *ngIf="registerForm.controls.lastName.errors['minlength'] || registerForm.controls.lastName.errors['maxlength']">
                     <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
                         viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -108,12 +108,12 @@
                 <label for="formInput" class="search-label">Email</label>
             </div>
             <div class="invalid-data" *ngIf="
-                    myForm.controls.email.invalid &&
-                    myForm.controls.email.touched &&
-                    myForm.controls.email.errors
+                    registerForm.controls.email.invalid &&
+                    registerForm.controls.email.touched &&
+                    registerForm.controls.email.errors
                  ">
 
-                <div class="flex items-center" *ngIf="myForm.controls.email.errors['required']">
+                <div class="flex items-center" *ngIf="registerForm.controls.email.errors['required']">
                     <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
                         viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -129,7 +129,7 @@
                     </svg>
                     Email is required
                 </div>
-                <div class="flex items-center" *ngIf="myForm.controls.email.errors['email']">
+                <div class="flex items-center" *ngIf="registerForm.controls.email.errors['email']">
                     <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
                         viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -153,12 +153,12 @@
                 <label for="formInput" class="search-label">Password</label>
             </div>
             <div class="invalid-data" *ngIf="
-                    myForm.controls.password.invalid &&
-                    myForm.controls.password.touched &&
-                    myForm.controls.password.errors
+                    registerForm.controls.password.invalid &&
+                    registerForm.controls.password.touched &&
+                    registerForm.controls.password.errors
                  ">
 
-                <div class="flex items-center" *ngIf="myForm.controls.password.errors['required']">
+                <div class="flex items-center" *ngIf="registerForm.controls.password.errors['required']">
                     <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
                         viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -174,7 +174,17 @@
                     </svg>
                     Password is required
                 </div>
-                <div class="flex items-center" *ngIf="(myForm.controls.password.errors['password'] && myForm.controls.password.errors['minlength']) || myForm.controls.password.errors['maxlength']  ">
+                <div 
+                    class="flex items-center" 
+                    *ngIf="
+                    (
+                        registerForm.controls.password.errors['uppercase'] ||
+                        registerForm.controls.password.errors['numeric'] ||
+                        registerForm.controls.password.errors['specialCharacter'] || 
+                        registerForm.controls.password.errors['minlength']) || 
+                        registerForm.controls.password.errors['maxlength']  
+                    "
+                    >
                     <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
                         viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -193,7 +203,7 @@
             </div>
             <button
                 class="btn-bef z-[1] relative overflow-hidden flex items-center justify-center w-full text-sm font-medium text-white px-[27px] mt-10 mb-[15px] h-[45px] rounded-md"
-                style="background-color: var(--default-color);" type="submit" [disabled]="!myForm.valid">
+                style="background-color: var(--default-color);" type="submit" [disabled]="!registerForm.valid">
                 CREATE
             </button>
             <a href="home"

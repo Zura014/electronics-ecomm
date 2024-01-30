@@ -4,26 +4,118 @@
 
     <div class="mx-auto mt-[60px] py-9 px-[25px] sm:px-[45px] border rounded-md w-10/12 lg:w-[588px]">
 
-        @if(!forgotPass){
+        @if(!fP){
             <h2 class="text-[20px] md:text-[22px] font-medium w-full text-center my-[18.26px]" style="line-height:28.6px">
                 Log in to your account
             </h2>
     
-            <form [formGroup]="myForm" class="relative" (ngSubmit)="onSubmit()">
+            <form [formGroup]="loginForm" class="relative" (ngSubmit)="signIn()">
                 <div class="input-group mt-5">
                     <input id="formInput" type="email"
                         class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
-                        placeholder="s">
+                        placeholder="s"
+                        formControlName="email"
+                        >
                     <label for="formInput" class="search-label">Email</label>
+                </div>
+                
+                <div class="invalid-data" *ngIf="
+                    loginForm.controls.email.invalid &&
+                    loginForm.controls.email.touched &&
+                    loginForm.controls.email.errors
+                 ">
+                    <div class="flex items-center" *ngIf="loginForm.controls.email.errors['required']">
+                        <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                            viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g>
+                                <g id="Error_1_">
+                                    <g id="Error">
+                                        <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                        <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                            style="fill:#E6E6E6;" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        Email is required
+                    </div>
+                    <div class="flex items-center" *ngIf="loginForm.controls.email.errors['email']">
+                        <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                            viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g>
+                                <g id="Error_1_">
+                                    <g id="Error">
+                                        <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                        <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                            style="fill:#E6E6E6;" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        Enter a valid email address
+                    </div>
                 </div>
                 <div class="input-group mt-5">
                     <input id="formInput" type="password"
                         class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
-                        placeholder="s">
+                        placeholder="s"
+                        formControlName="password"
+                        >
                     <label for="formInput" class="search-label">Password</label>
                 </div>
+                <div class="invalid-data" *ngIf="
+                    loginForm.controls.password.invalid &&
+                    loginForm.controls.password.touched &&
+                    loginForm.controls.password.errors
+                 ">
+
+                <div class="flex items-center" *ngIf="loginForm.controls.password.errors['required']">
+                    <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                        viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    Password is required
+                </div>
+                <div 
+                    class="flex items-center" 
+                    *ngIf="
+                    (
+                        loginForm.controls.password.errors['uppercase'] ||
+                        loginForm.controls.password.errors['numeric'] ||
+                        loginForm.controls.password.errors['specialCharacter'] || 
+                        loginForm.controls.password.errors['minlength']) || 
+                        loginForm.controls.password.errors['maxlength']  
+                    "
+                    >
+                    <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                        viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <g id="Error_1_">
+                                <g id="Error">
+                                    <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                    <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                        style="fill:#E6E6E6;" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                        Password is Incorrect! Try again.
+                    </div>
+                </div>
                 <a
-                    (click)="forgotPass = !forgotPass"
+                    (click)="fP = !fP"
                     class="cursor-pointer mt-2.5 text-[rgb(51, 51, 51)] text-center hover:no-underline hover:text-[#129cb8] text-sm underline underline-offset-[3px] inline-block">
                     Forgot your password?
                 </a>
@@ -46,12 +138,50 @@
                 Reset your password
             </h2>
             <h3 class="text-sm my-[15px] font-[400] text-center text-[#777777]">We will send you an email to reset your password</h3>
-            <form [formGroup]="myForm" class="relative" (ngSubmit)="onSubmit()">
+            <form [formGroup]="fPForm" class="relative" (ngSubmit)="forgotPass()">
                 <div class="input-group mt-5">
                     <input id="formInput" type="email"
                         class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
                         placeholder="s">
                     <label for="formInput" class="search-label">Email</label>
+                </div>
+                <div class="invalid-data" *ngIf="
+                    loginForm.controls.email.invalid &&
+                    loginForm.controls.email.touched &&
+                    loginForm.controls.email.errors
+                 ">
+                    <div class="flex items-center" *ngIf="loginForm.controls.email.errors['required']">
+                        <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                            viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g>
+                                <g id="Error_1_">
+                                    <g id="Error">
+                                        <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                        <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                            style="fill:#E6E6E6;" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        Email is required
+                    </div>
+                    <div class="flex items-center" *ngIf="loginForm.controls.email.errors['email']">
+                        <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
+                            viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g>
+                                <g id="Error_1_">
+                                    <g id="Error">
+                                        <circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+                                        <path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+                                            style="fill:#E6E6E6;" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        Enter a valid email address
+                    </div>
                 </div>
                 <button
                     class="btn-bef z-[1] overflow-hidden relative flex items-center justify-center w-full text-sm font-medium text-white px-[27px] mt-10 mb-[15px] h-[45px] rounded-md"
@@ -62,7 +192,7 @@
                     routerLink="/register"
                     class="cursor-pointer w-full text-[rgb(51, 51, 51)] text-center hover:no-underline hover:text-[#129cb8] text-sm underline underline-offset-[3px] inline-block"
                     style="line-height: 25.2px;"
-                    (click)="forgotPass = false"
+                    (click)="fP = false"
                     >
     
                     Cancel

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { TopCol } from '../../../../interfaces/topcol.interface';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../../../services/auth.service';
+import { passwordValidator } from '../../../../validators/password.validator';
 
 @Component({
   selector: 'app-login',
@@ -8,19 +10,33 @@ import { FormGroup } from '@angular/forms';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  forgotPass: boolean = false;
+  fP: boolean = false;
 
   topColContent: TopCol = {
     title: 'Account',
     pageHREF: 'home',
     location: ['']
   };
-  myForm!: FormGroup;
+  
+  
+  loginForm: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8), passwordValidator(), Validators.maxLength(32)]),
+  });
+  fPForm: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+  });
 
 
-  constructor() {
+  constructor(authservice: AuthService) {
   }
-  onSubmit(): void{
-    console.log(this.myForm.value);
+
+
+  signIn(): void{
+    console.log(this.loginForm.value);
+  }
+
+  forgotPass(): void{
+    console.log(this.loginForm.value);
   }
 }

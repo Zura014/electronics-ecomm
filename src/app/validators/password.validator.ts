@@ -5,16 +5,30 @@ export function passwordValidator(): ValidatorFn {
     const value: string = control.value;
 
     if (!value) {
-      // If the value is empty, consider it valid. You may adjust this based on your requirements.
-      return null;
+      return { required: true };
     }
 
-    // Check for symbols using a regular expression.
-    const symbolRegex = /[!@#$%^&*(),.?":{}|<>]/;
-    if (!symbolRegex.test(value)) {
-      return { password: true, message: 'Password must contain at least one symbol' };
+    // Check for at least 8 characters
+    if (value.length < 8) {
+      return { minLength: true };
     }
-    // If all checks pass, consider it valid.
-    return null
+
+    // Check for at least 1 uppercase letter
+    if (!/[A-Z]/.test(value)) {
+      return { uppercase: true };
+    }
+
+    // Check for at least 1 numeric digit
+    if (!/\d/.test(value)) {
+      return { numeric: true };
+    }
+
+    // Check for at least 1 special character
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+      return { specialCharacter: true };
+    }
+
+    // All requirements met
+    return null;
   };
 }
