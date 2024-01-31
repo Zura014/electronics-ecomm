@@ -11,7 +11,7 @@
     
             <form [formGroup]="loginForm" class="relative" (ngSubmit)="signIn()">
                 <div class="input-group mt-5">
-                    <input id="formInput" type="email"
+                    <input id="formInputE" type="email"
                         class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
                         placeholder="s"
                         formControlName="email"
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="input-group mt-5">
-                    <input id="formInput" type="password"
+                    <input id="formInputP" type="password"
                         class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
                         placeholder="s"
                         formControlName="password"
@@ -140,7 +140,7 @@
             <h3 class="text-sm my-[15px] font-[400] text-center text-[#777777]">We will send you an email to reset your password</h3>
             <form [formGroup]="fPForm" class="relative" (ngSubmit)="forgotPass()">
                 <div class="input-group mt-5">
-                    <input id="formInput" type="email"
+                    <input id="formInputE" type="email"
                         class="w-full placeholder:text-white outline-none font-normal text-sm placeholder:text-sm p-2.5 decoration-none m-[1px] border rounded-md h-full"
                         placeholder="s">
                     <label for="formInput" class="search-label">Email</label>

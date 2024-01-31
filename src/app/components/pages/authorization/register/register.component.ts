@@ -45,7 +45,8 @@ export class RegisterComponent {
         this.authservice.signUp(user)
       );
       this.registerForm.reset();
-      this.router.navigateByUrl('/')
+      this.router.navigateByUrl('/login')
     }
   }
+
 }
