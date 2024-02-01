@@ -1,11 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UserInterface } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  private _signUpUrL = 'http://localhost:3000/auth/signup';
+  private _signInUrL = 'http://localhost:3000/auth/signin';
+
   constructor(private http: HttpClient) {}
 
   signUp(user: {
@@ -13,15 +17,12 @@ export class AuthService {
     email: string;
     password: string;
   }): Observable<any> {
-    return this.http.post('http://localhost:3000/auth/signup', user);
+    return this.http.post(this._signUpUrL, user);
   }
 
-  signIn(user: {
-    email: string;
-    password: string;
-  }): Observable<{ accesToken: string }> {
-    return this.http.post<{ accesToken: string }>(
-      'http://localhost:3000/auth/signin',
+  signIn(user: any): Observable<{ accessToken: string}> {
+    return this.http.post<{ accessToken: string }>(
+      this._signInUrL,
       user
     );
   }
