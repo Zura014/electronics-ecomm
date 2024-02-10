@@ -38,15 +38,12 @@ export class LoginComponent {
   constructor(private authService: AuthService) {}
 
   signIn(): void {
-    const user: UserInterface = {
-      email: this.loginForm.get('email')?.value,
-      password: this.loginForm.get('password')?.value
-    }
-    this.authService
-      .signIn(user)
-      .subscribe(response => 
-        localStorage.setItem('accesToken', response.accessToken)
-      );
+    const user = this.loginForm.value;
+    this.authService.signIn(user).subscribe((response) => {
+      localStorage.setItem('accessToken', response.accessToken);
+    });
+    this.loginForm.reset();
+    this.router.navigateByUrl('/');
   }
 
   forgotPass(): void {
