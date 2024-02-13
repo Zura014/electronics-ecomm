@@ -41,9 +41,7 @@ export class RegisterComponent {
   
       this.authservice
       .signUp(user)
-      .subscribe((user) => 
-        this.authservice.signUp(user)
-      );
+      .subscribe((user) => this.authservice.signUp(user));
       this.registerForm.reset();
       this.router.navigateByUrl('/login')
     }

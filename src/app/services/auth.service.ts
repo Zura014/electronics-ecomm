@@ -17,7 +17,7 @@ export class AuthService {
     email: string;
     password: string;
   }): Observable<any> {
-    return this.http.post(this._signUpUrL, user);
+    return this.http.post<any>(this._signUpUrL, user);
   }
 
   signIn(user: any): Observable<{ accessToken: string}> {

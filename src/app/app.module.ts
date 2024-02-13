@@ -48,10 +48,8 @@ import { provideServerRendering } from '@angular/platform-server';
     HttpClientModule
   ],
   providers: [
-    provideClientHydration(), 
-    provideServerRendering(), 
-    importProvidersFrom(HttpClientModule),
     provideHttpClient(withFetch()),
+    importProvidersFrom(HttpClientModule),
     AuthService
   ],
   bootstrap: [AppComponent],

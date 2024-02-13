@@ -41,9 +41,8 @@ export class LoginComponent {
     const user = this.loginForm.value;
     this.authService.signIn(user).subscribe((response) => {
       localStorage.setItem('accessToken', response.accessToken);
+      this.router.navigateByUrl('/');
     });
-    this.loginForm.reset();
-    this.router.navigateByUrl('/');
   }
 
   forgotPass(): void {
