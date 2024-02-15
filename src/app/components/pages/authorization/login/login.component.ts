@@ -13,6 +13,7 @@ import { UserInterface } from '../../../../interfaces/user.interface';
 })
 export class LoginComponent {
   router = inject(Router);
+  isLoggedIn = false;
 
   fP: boolean = false;
 
@@ -39,13 +40,14 @@ export class LoginComponent {
 
   signIn(): void {
     const user = this.loginForm.value;
-    this.authService.signIn(user).subscribe((response) => {
-      localStorage.setItem('accessToken', response.accessToken);
-      this.router.navigateByUrl('/');
-    });
+    if (this.loginForm.valid) {
+      this.authService.signIn(user).subscribe((response) => {
+        localStorage.setItem('accessToken', response.accessToken);
+        this.isLoggedIn = true;
+        this.router.navigateByUrl('/');
+      });
+    }
   }
 
-  forgotPass(): void {
-    console.log(this.loginForm.value);
-  }
+  forgotPass(): void {}
 }
