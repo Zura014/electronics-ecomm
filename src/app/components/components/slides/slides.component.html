@@ -12,8 +12,8 @@
                     {{ slide.discount }}
                 </p>
             </div>
-            <button class="bg-cyan-950 text-white px-2 py-0.5 cursor-pointer absolute top-1/2 -translate-y-1/2">arrow previous</button>
-            <button class="bg-cyan-950 text-white px-2 py-0.5 cursor-pointer absolute top-1/2 -translate-y-1/2 right-0">arrow next</button>
+            <button (click)="prev()" class="bg-cyan-950 text-white px-2 py-0.5 cursor-pointer absolute top-1/2 -translate-y-1/2">arrow previous</button>
+            <button (click)="next()" class="bg-cyan-950 text-white px-2 py-0.5 cursor-pointer absolute top-1/2 -translate-y-1/2 right-0">arrow next</button>
         </li>
     </ul>
 </div>
