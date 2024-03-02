@@ -1,9 +1,9 @@
 <!-- Slides Component -->
 <div class="w-full -z-20">
     <!-- Main div of slides -->
-    <ul>
+    <ul class="relative">
         <!-- Slides -->
-        <li *ngFor="let slide of slides" class="slider-img-1 w-full float-left relative top-0 left-0 opacity-100">
+        <li *ngFor="let slide of slides" class="absolute slider-img-1 w-full float-left top-0 left-0 opacity-100">
             <!-- Slider Image -->
             <img [src]="slide.img" alt="" [srcset]="slide.imgsrcset" height="650" loading="lazy" sizes="100vw">
             <!-- Slider Text -->
@@ -12,6 +12,8 @@
                     {{ slide.discount }}
                 </p>
             </div>
+            <button class="bg-cyan-950 text-white px-2 py-0.5 cursor-pointer absolute top-1/2 -translate-y-1/2">arrow previous</button>
+            <button class="bg-cyan-950 text-white px-2 py-0.5 cursor-pointer absolute top-1/2 -translate-y-1/2 right-0">arrow next</button>
         </li>
     </ul>
 </div>
