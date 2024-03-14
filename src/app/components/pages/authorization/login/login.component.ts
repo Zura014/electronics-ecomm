@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { TopCol } from '../../../../interfaces/topcol.interface';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../../services/auth.service';
@@ -11,9 +11,10 @@ import { UserInterface } from '../../../../interfaces/user.interface';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   router = inject(Router);
-  isLoggedIn = false;
+  isLoggedIn: boolean = false;
+  passCorrect: boolean = true || false;
 
   fP: boolean = false;
 
@@ -38,16 +39,36 @@ export class LoginComponent {
 
   constructor(private authService: AuthService) {}
 
+  ngOnInit(): void {
+    this.passCorrect === false;
+  }
+
+
   signIn(): void {
     const user = this.loginForm.value;
     if (this.loginForm.valid) {
       this.authService.signIn(user).subscribe((response) => {
-        localStorage.setItem('accessToken', response.accessToken);
-        this.isLoggedIn = true;
-        this.router.navigateByUrl('/');
+          try{
+          localStorage.setItem('accessToken', response.accessToken);
+          this.passCorrect = true;
+          this.isLoggedIn = true;
+          this.router.navigateByUrl('/');
+        }
+          catch (error) {
+            console.log(error + 'pass incorrect');
+            this.passCorrect = false;
+            this.loginForm.controls['password'].reset()
+          }
       });
     }
   }
 
-  forgotPass(): void {}
+  forgotPass(): void {
+    const user = this.fPForm.value;
+    if(this.fPForm.valid){
+      this.authService.forgotPassword(user).subscribe(res => {
+        this.router.navigateByUrl('/login');
+      })
+    } 
+  }
 }

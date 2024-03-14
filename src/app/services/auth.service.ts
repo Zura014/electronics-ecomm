@@ -9,6 +9,7 @@ import { UserInterface } from '../interfaces/user.interface';
 export class AuthService {
   private _signUpUrL = 'http://localhost:3000/auth/signup';
   private _signInUrL = 'http://localhost:3000/auth/signin';
+  private _forgotPassUrl = 'http://localhost:3000/auth/forgot-password';
 
   constructor(private http: HttpClient) {}
 
@@ -20,10 +21,12 @@ export class AuthService {
     return this.http.post<any>(this._signUpUrL, user);
   }
 
-  signIn(user: any): Observable<{ accessToken: string}> {
-    return this.http.post<{ accessToken: string }>(
-      this._signInUrL,
-      user
-    );
+  signIn(user: any): Observable<{ accessToken: string }> {
+    return this.http.post<{ accessToken: string }>(this._signInUrL, user);
   }
+
+  forgotPassword(user: any): Observable<any> {
+    return this.http.post(this._forgotPassUrl, user);
+  }
+  
 }

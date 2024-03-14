@@ -68,7 +68,8 @@
                 <div class="invalid-data" *ngIf="
                     loginForm.controls.password.invalid &&
                     loginForm.controls.password.touched &&
-                    loginForm.controls.password.errors
+                    loginForm.controls.password.errors &&
+                    passCorrect
                  ">
 
                 <div class="flex items-center" *ngIf="loginForm.controls.password.errors['required']">
@@ -95,7 +96,8 @@
                         loginForm.controls.password.errors['numeric'] ||
                         loginForm.controls.password.errors['specialCharacter'] || 
                         loginForm.controls.password.errors['minlength']) || 
-                        loginForm.controls.password.errors['maxlength']  
+                        loginForm.controls.password.errors['maxlength'] ||
+                        !passCorrect
                     "
                     >
                     <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
@@ -146,11 +148,11 @@
                     <label for="formInput" class="search-label">Email</label>
                 </div>
                 <div class="invalid-data" *ngIf="
-                    loginForm.controls.email.invalid &&
-                    loginForm.controls.email.touched &&
-                    loginForm.controls.email.errors
+                    fPForm.controls.email.invalid &&
+                    fPForm.controls.email.touched &&
+                    fPForm.controls.email.errors
                  ">
-                    <div class="flex items-center" *ngIf="loginForm.controls.email.errors['required']">
+                    <div class="flex items-center" *ngIf="fPForm.controls.email.errors['required']">
                         <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
                             viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -166,7 +168,7 @@
                         </svg>
                         Email is required
                     </div>
-                    <div class="flex items-center" *ngIf="loginForm.controls.email.errors['email']">
+                    <div class="flex items-center" *ngIf="fPForm.controls.email.errors['email']">
                         <svg height="15" class="mr-2.5" style="overflow:visible;enable-background:new 0 0 32 32"
                             viewBox="0 0 32 32" width="15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
