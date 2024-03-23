@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { TopCol } from '../../../../interfaces/topcol.interface';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../../services/auth.service';
@@ -13,7 +13,7 @@ import { UserInterface } from '../../../../interfaces/user.interface';
 })
 export class LoginComponent implements OnInit {
   router = inject(Router);
-  isLoggedIn: boolean = false;
+  
   passCorrect: boolean = true || false;
 
   fP: boolean = false;
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.passCorrect === false;
+    this.passCorrect;
   }
 
 
@@ -51,7 +51,6 @@ export class LoginComponent implements OnInit {
           try{
           localStorage.setItem('accessToken', response.accessToken);
           this.passCorrect = true;
-          this.isLoggedIn = true;
           this.router.navigateByUrl('/');
         }
           catch (error) {

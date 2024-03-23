@@ -29,4 +29,17 @@ export class AuthService {
     return this.http.post(this._forgotPassUrl, user);
   }
   
+  isLoggedIn(): boolean {
+    try{
+      if(localStorage.getItem('accessToken')){
+        return true;
+      }else{
+        return false;
+      }
+    }
+    catch{
+      return false;
+    }
+  }
+
 }

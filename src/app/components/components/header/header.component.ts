@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Offer } from '../../../interfaces/offer.interface';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   isClickedBM: boolean = false;
   isClickedSearch: boolean = false;
   bme: boolean = false;
@@ -18,7 +19,15 @@ export class HeaderComponent {
   ddlang: boolean = false;
   clickedBAC: boolean = false;
   cpfp: boolean = false;
+  isLoggedIn: boolean = false;
   
+
+  constructor(private as: AuthService){}
+
+  ngOnInit(): void {
+    this.isLoggedIn = this.as.isLoggedIn();      
+  }
+
   toggleBac(): void{
     this.clickedBAC =!this.clickedBAC;
   }
