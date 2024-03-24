@@ -13,6 +13,7 @@ import { UserInterface } from '../../../../interfaces/user.interface';
 })
 export class LoginComponent implements OnInit {
   router = inject(Router);
+  isLoggedIn: boolean = false;
   
   passCorrect: boolean = true || false;
 
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.passCorrect;
+    this.isLoggedIn = this.authService.isLoggedIn();
   }
 
 
@@ -51,7 +52,7 @@ export class LoginComponent implements OnInit {
           try{
           localStorage.setItem('accessToken', response.accessToken);
           this.passCorrect = true;
-          this.router.navigateByUrl('/');
+          window.location.replace('/home');
         }
           catch (error) {
             console.log(error + 'pass incorrect');

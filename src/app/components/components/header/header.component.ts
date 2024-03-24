@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
   
 
-  constructor(private as: AuthService){}
+  constructor(private as: AuthService) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.as.isLoggedIn();      
