@@ -28,6 +28,12 @@ export class AuthService {
   forgotPassword(user: any): Observable<any> {
     return this.http.post(this._forgotPassUrl, user);
   }
+
+  sessionExpiration(time: number) {
+    setTimeout(() => {
+      localStorage.clear()
+    }, time);
+  }
   
   isLoggedIn(): boolean {
     try{
@@ -40,6 +46,11 @@ export class AuthService {
     catch{
       return false;
     }
+  }
+
+  logOut(): void {
+    localStorage.clear();
+    window.location.reload();
   }
 
 }
