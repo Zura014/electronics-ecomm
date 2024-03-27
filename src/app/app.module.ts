@@ -19,10 +19,15 @@ import { PageNotFoundComponent } from './components/pages/page-not-found/page-no
 import { SlidesComponent } from './components/components/slides/slides.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopColumnContentComponent } from './components/components/top-column-content/top-column-content.component';
-import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import {
+  HttpClientModule,
+  provideHttpClient,
+  withFetch,
+} from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { provideServerRendering } from '@angular/platform-server';
-
+import { AccountComponent } from './components/pages/account/account.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,7 @@ import { provideServerRendering } from '@angular/platform-server';
     PageNotFoundComponent,
     SlidesComponent,
     TopColumnContentComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,13 +51,26 @@ import { provideServerRendering } from '@angular/platform-server';
     BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule,
   ],
   providers: [
     provideHttpClient(withFetch()),
-    importProvidersFrom(HttpClientModule),
-    AuthService
+    importProvidersFrom(
+      HttpClientModule,
+      JwtModule.forRoot({
+        config: {
+          tokenGetter: tokenGetter,
+          allowedDomains: ['localhost:3000'],
+          disallowedRoutes: ['http://localhost:3000'],
+        },
+      })
+    ),
+    AuthService,
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+export function tokenGetter() {
+  return localStorage.getItem('accesToken');
+}
