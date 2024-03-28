@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserInterface } from '../interfaces/user.interface';
-import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root',
@@ -11,12 +10,13 @@ export class AuthService {
   private _signUpUrL = 'http://localhost:3000/auth/signup';
   private _signInUrL = 'http://localhost:3000/auth/signin';
   private _forgotPassUrl = 'http://localhost:3000/auth/forgot-password';
-  private _userUrl = 'http://localhost:3000/auth/user';
+  private _profileUrl = 'http://localhost:3000/users/profile';
 
-  constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {}
+  constructor(private http: HttpClient) {} 
 
   signUp(user: {
-    username: string;
+    firstName: string;
+    lastName: string;
     email: string;
     password: string;
   }): Observable<any> {
@@ -26,24 +26,16 @@ export class AuthService {
   signIn(user: any): Observable<{ accessToken: string }> {
     return this.http.post<{ accessToken: string }>(this._signInUrL, user);
   }
-  
-  getAccount() {
-    const token = localStorage.getItem('accesToken');
-    if (token){
-      const decodedToken = this.jwtHelper.decodeToken(token);
-      return decodedToken
-    }
-  }
 
   forgotPassword(user: any): Observable<any> {
     return this.http.post(this._forgotPassUrl, user);
   }
 
-  sessionExpiration(time: number) {
-    setTimeout(() => {
-      localStorage.clear()
-    }, time);
-  }
+  // sessionExpiration(time: number) {
+  //   setTimeout(() => {
+  //     localStorage.clear()
+  //   }, time);
+  // }
   
   isLoggedIn(): boolean {
     try{
@@ -56,6 +48,21 @@ export class AuthService {
     catch{
       return false;
     }
+  }
+  
+  getProfile(): Observable<any> {
+    if (!this.isLoggedIn()) {
+      throw new Error('Access token not found');
+    }
+
+    const headers = new HttpHeaders().set(
+      'Authorization',
+      'Bearer ' + localStorage.getItem('accessToken')
+    );
+
+    return this.http.get<any>('http://localhost:3000/users/profile', {
+      headers,
+    });
   }
 
   logOut(): void {

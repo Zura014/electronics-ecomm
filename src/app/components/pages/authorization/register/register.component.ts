@@ -34,7 +34,8 @@ export class RegisterComponent {
 
     if(this.registerForm.valid){
       const user = {
-        username: this.registerForm.get('firstName')?.value + this.registerForm.get('lastName')?.value || '',
+        firstName: this.registerForm.get('firstName')?.value,
+        lastName: this.registerForm.get('lastname')?.value,
         email: this.registerForm.get('email')?.value,
         password: this.registerForm.get('password')?.value
       }

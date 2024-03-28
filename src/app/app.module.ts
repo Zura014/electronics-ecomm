@@ -27,7 +27,6 @@ import {
 import { AuthService } from './services/auth.service';
 import { provideServerRendering } from '@angular/platform-server';
 import { AccountComponent } from './components/pages/account/account.component';
-import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -52,20 +51,10 @@ import { JwtModule } from '@auth0/angular-jwt';
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
-    JwtModule,
   ],
   providers: [
     provideHttpClient(withFetch()),
-    importProvidersFrom(
-      HttpClientModule,
-      JwtModule.forRoot({
-        config: {
-          tokenGetter: tokenGetter,
-          allowedDomains: ['localhost:3000'],
-          disallowedRoutes: ['http://localhost:3000'],
-        },
-      })
-    ),
+    importProvidersFrom(HttpClientModule),
     AuthService,
   ],
   bootstrap: [AppComponent],

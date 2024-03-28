@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { TopCol } from '../../../interfaces/topcol.interface';
+import { UserInterface } from '../../../interfaces/user.interface';
 
 @Component({
   selector: 'app-account',
@@ -10,9 +11,11 @@ import { TopCol } from '../../../interfaces/topcol.interface';
 export class AccountComponent implements OnInit {
   
   user = {
-    name: '',
+    firstName: '',
     lastName: '',
   }
+  firstName = this.user.firstName;
+  lastName = this.user.lastName;
 
   constructor(private authService: AuthService) { }
 
@@ -23,7 +26,10 @@ export class AccountComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //get decoded data from server
+    this.authService.getProfile().subscribe(data => {
+      this.firstName = data.firstName;
+      this.lastName = data.lastName;
+    })
   }
 
   logOut(): void {
