@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
           window.location.replace('/home');
         }
           catch (error) {
-            console.log(error + 'pass incorrect');
+            alert('Invalid Credidentials!')
             this.passCorrect = false;
             this.loginForm.controls['password'].reset()
           }
