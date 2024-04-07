@@ -11,8 +11,11 @@ export class AuthService {
   private _signInUrL = 'http://localhost:3000/auth/signin';
   private _forgotPassUrl = 'http://localhost:3000/auth/forgot-password';
   private _profileUrl = 'http://localhost:3000/users/profile';
+  private accessToken: string;
 
-  constructor(private http: HttpClient) {} 
+  constructor(private http: HttpClient) {
+    this.accessToken = localStorage.getItem('accessToken') || '';
+  }
 
   signUp(user: {
     firstName: string;
@@ -30,25 +33,23 @@ export class AuthService {
   forgotPassword(user: any): Observable<any> {
     return this.http.post(this._forgotPassUrl, user);
   }
-  
+
   isLoggedIn(): boolean {
-    try{
-      if(localStorage.getItem('accessToken')){
+    try {
+      if (localStorage.getItem('accessToken')) {
         return true;
-      }else{
+      } else {
         return false;
       }
-    }
-    catch{
+    } catch {
       return false;
     }
   }
-  
-  getProfile(): Observable<any> {
-    if (!this.isLoggedIn()) {
+
+  getProfile() {
+    if (!this.accessToken) {
       throw new Error('Access token not found');
     }
-
     const headers = new HttpHeaders().set(
       'Authorization',
       'Bearer ' + localStorage.getItem('accessToken')
@@ -63,5 +64,4 @@ export class AuthService {
     localStorage.clear();
     window.location.reload();
   }
-
 }
